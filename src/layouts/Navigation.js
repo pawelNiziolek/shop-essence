@@ -8,32 +8,31 @@ import logo from "../img/core-img/logo.png";
 
 const WrapNav = styled.div`
   display: flex;
+  justify-content: space-between;
   height: 85px;
-  width: 100%;
+  padding: 5px 0 5px 5px;
 `;
 
-const NavLeft = styled.nav`
-  width: 50%;
-  /* overflow: hidden; */
-`;
-
-const NavRigh = styled.div`
+const Nav = styled.nav`
+  display: flex;
+  align-items: center;
+  min-width: 50%;
   width: 50%;
 `;
 
 const Navigation = () => {
   return (
     <WrapNav>
-      <NavLeft>
+      <Nav>
         <Link to={"../pages/Home.js"}>
           <img src={logo} alt="" />
         </Link>
         <MediaClose />
         <Menu />
-      </NavLeft>
-      <NavRigh>
+      </Nav>
+      <Nav>
         <NavRight />
-      </NavRigh>
+      </Nav>
     </WrapNav>
   );
 };

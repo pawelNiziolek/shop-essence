@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const KidsCol = () => {
   return (
-    <ul>
+    <>
       <li>Kid's Collection</li>
       <li>
         <Link to="/dresses">Dresses</Link>
@@ -20,7 +20,7 @@ const KidsCol = () => {
       <li>
         <Link to="/dresses">Trench</Link>
       </li>
-    </ul>
+    </>
   );
 };
 

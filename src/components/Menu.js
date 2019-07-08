@@ -1,38 +1,69 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import WomenCol from "../components/WomenCol";
 import MenCol from "../components/MenCol";
 import KidsCol from "../components/KidsCol";
 import bg6 from "../img/bg-img/bg-6.jpg";
 
-const LiNav = styled.li`
+const UlWrapMenu = styled.ul`
   display: flex;
+`;
+
+const LinkMenu = styled.a`
+  padding: 0 12px;
+  color: #787878;
+`;
+
+const DivWrapMenu = styled.div`
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 85px;
+  background-color: #fff;
+  z-index: 200;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+`;
+
+const UlMenu = styled.ul`
+  display: flex;
+  flex-direction: column;
 `;
 
 const Menu = () => {
   return (
     <div>
       <div>
-        <ul>
-          <LiNav>
-            <Link to="#">Shop</Link>
-            <div>
-              <WomenCol />
-              <MenCol />
-              <KidsCol />
+        <UlWrapMenu>
+          <li>
+            <LinkMenu to="#">Shop</LinkMenu>
+            <DivWrapMenu>
+              <UlMenu>
+                <WomenCol />
+              </UlMenu>
+              <UlMenu>
+                <MenCol />
+              </UlMenu>
+              <UlMenu>
+                <KidsCol />
+              </UlMenu>
               <div>
                 <img src={bg6} alt="" />
               </div>
-            </div>
-          </LiNav>
-          <li>
-            <Link to="/blog">Blog</Link>
+            </DivWrapMenu>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <LinkMenu to="/blog">Blog</LinkMenu>
           </li>
-        </ul>
+          <li>
+            <LinkMenu to="/contact">Contact</LinkMenu>
+          </li>
+        </UlWrapMenu>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const WomenCol = () => {
   return (
-    <ul>
+    <>
       <li>Women's Collection</li>
       <li>
         <Link to="/dresses">Dresses</Link>
@@ -20,7 +20,7 @@ const WomenCol = () => {
       <li>
         <Link to="/dresses">Bras &amp; Panties</Link>
       </li>
-    </ul>
+    </>
   );
 };
 
