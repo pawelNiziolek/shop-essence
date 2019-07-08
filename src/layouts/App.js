@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Header from "./Header";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 import Page from "./Page";
@@ -11,6 +10,11 @@ const WrapAllDiv = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100vh;
+`;
+
+const Main = styled.main`
+  min-height: 100vh;
+  margin-top: 85px;
 `;
 
 const HeaderMenu = styled.header`
@@ -28,10 +32,7 @@ function App() {
     <Router>
       <WrapAllDiv>
         <HeaderMenu> {<Navigation />}</HeaderMenu>
-        <main>
-          {<Header />}
-          <section>{<Page />}</section>
-        </main>
+        <Main>{<Page />}</Main>
         <footer>{<Footer />}</footer>
       </WrapAllDiv>
     </Router>
