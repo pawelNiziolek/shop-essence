@@ -24,8 +24,6 @@ const Nav = styled.nav`
 
 const ImgLogo = styled.img`
   display: block;
-  height: auto;
-  max-width: 100%;
   margin-right: 30px;
   padding: 10px 0;
 `;

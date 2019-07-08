@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import WomenCol from "../components/WomenCol";
 import MenCol from "../components/MenCol";
 import KidsCol from "../components/KidsCol";
@@ -17,8 +17,8 @@ const LiNav = styled.li`
 
 const DivWrapMenu = styled.div`
   display: flex;
-  /* opacity: 0;
-  visibility: hidden; */
+  opacity: 0;
+  visibility: hidden;
   position: absolute;
   width: 100%;
   left: 0;
@@ -34,7 +34,7 @@ const DivWrapMenu = styled.div`
   }
 `;
 
-const LinkMenu = styled.a`
+const LinkMenu = styled(Link)`
   padding: 20px 15px;
   color: #787878;
   font-size: 16px;
@@ -43,7 +43,7 @@ const LinkMenu = styled.a`
   :hover {
     color: #333;
   }
-  :hover + .show-menu {
+  :hover + ${DivWrapMenu} {
     opacity: 1;
     visibility: visible;
     top: 85px;
@@ -53,11 +53,20 @@ const LinkMenu = styled.a`
 const UlMenu = styled.ul`
   display: flex;
   flex-direction: column;
+  width: 25%;
+  padding: 15px;
+  list-style: none;
+  border-left: ${props => props.leftLine || "none"};
 `;
 
 const Iicon = styled.i`
   font-size: 11px;
   padding-left: 5px;
+`;
+
+const DivImg = styled.div`
+  width: 25%;
+  padding: 15px;
 `;
 
 const Menu = () => {
@@ -70,19 +79,19 @@ const Menu = () => {
               Shop
               <Iicon className="fas fa-chevron-down" />
             </LinkMenu>
-            <DivWrapMenu className="show-menu">
+            <DivWrapMenu>
               <UlMenu>
                 <WomenCol />
               </UlMenu>
-              <UlMenu>
+              <UlMenu leftLine="1px solid #f2f4f8">
                 <MenCol />
               </UlMenu>
-              <UlMenu>
+              <UlMenu leftLine="1px solid #f2f4f8">
                 <KidsCol />
               </UlMenu>
-              <div>
-                <img src={bg6} alt="" />
-              </div>
+              <DivImg>
+                <img src={bg6} alt=" brown bag" />
+              </DivImg>
             </DivWrapMenu>
           </LiNav>
           <LiNav>

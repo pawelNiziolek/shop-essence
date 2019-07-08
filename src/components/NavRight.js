@@ -40,17 +40,17 @@ const NavRight = () => {
       <SearchButton />
       <DivLink>
         <Link to="#">
-          <ImgMenu src={heart} alt="" />
+          <ImgMenu src={heart} alt="heart icon" />
         </Link>
       </DivLink>
       <DivLink>
         <Link to="#">
-          <ImgMenu src={user} alt="" />
+          <ImgMenu src={user} alt="man icon" />
         </Link>
       </DivLink>
       <DivLink>
         <Link to="#" id="essenceCartBtn">
-          <ImgMenu src={bag} alt="" />
+          <ImgMenu src={bag} alt="bag icon" />
           <SpanCart>3</SpanCart>
         </Link>
       </DivLink>
