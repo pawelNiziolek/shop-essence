@@ -20,7 +20,6 @@ const HeaderMenu = styled.header`
   left: 0;
   width: 100%;
   border-bottom: 1px solid #ebebeb;
-  -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
 `;
 

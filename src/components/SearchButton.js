@@ -34,6 +34,9 @@ const InputSearch = styled.input`
   font-family: "Poppins", sans-serif;
   transition-duration: 500ms;
   outline: none;
+  :focus {
+    width: 350px;
+  }
 `;
 
 const SearchButon = () => {

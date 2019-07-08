@@ -16,9 +16,10 @@ const LiNav = styled.li`
 `;
 
 const LinkMenu = styled.a`
-  padding: 0 15px;
+  padding: 10px 15px;
   color: #787878;
   font-size: 16px;
+  cursor: pointer;
 `;
 
 const DivWrapMenu = styled.div`
@@ -32,7 +33,6 @@ const DivWrapMenu = styled.div`
   background-color: #fff;
   z-index: 200;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
-  -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 `;
 

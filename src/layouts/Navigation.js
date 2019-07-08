@@ -11,11 +11,13 @@ const WrapNav = styled.div`
   justify-content: space-between;
   height: 85px;
   padding: 5px 0 5px 5%;
+  background-color: #ffffff;
 `;
 
 const Nav = styled.nav`
   display: flex;
   align-items: center;
+  justify-content: ${props => props.navJusContent || "flex-start"};
   min-width: 50%;
   width: 50%;
 `;
@@ -38,7 +40,7 @@ const Navigation = () => {
         <MediaClose />
         <Menu />
       </Nav>
-      <Nav>
+      <Nav navJusContent="flex-end">
         <NavRight />
       </Nav>
     </WrapNav>
