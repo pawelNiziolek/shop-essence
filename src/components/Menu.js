@@ -15,30 +15,49 @@ const LiNav = styled.li`
   list-style: none;
 `;
 
-const LinkMenu = styled.a`
-  padding: 10px 15px;
-  color: #787878;
-  font-size: 16px;
-  cursor: pointer;
-`;
-
 const DivWrapMenu = styled.div`
   display: flex;
-  opacity: 0;
-  visibility: hidden;
+  /* opacity: 0;
+  visibility: hidden; */
   position: absolute;
   width: 100%;
   left: 0;
-  top: 85px;
+  top: 120%;
   background-color: #fff;
   z-index: 200;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
-  transition-duration: 0.3s;
+  transition: 0.3s;
+  :hover {
+    opacity: 1;
+    visibility: visible;
+    top: 85px;
+  }
+`;
+
+const LinkMenu = styled.a`
+  padding: 20px 15px;
+  color: #787878;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+  :hover {
+    color: #333;
+  }
+  :hover + .show-menu {
+    opacity: 1;
+    visibility: visible;
+    top: 85px;
+  }
 `;
 
 const UlMenu = styled.ul`
   display: flex;
   flex-direction: column;
+`;
+
+const Iicon = styled.i`
+  font-size: 11px;
+  padding-left: 5px;
 `;
 
 const Menu = () => {
@@ -47,8 +66,11 @@ const Menu = () => {
       <div>
         <UlWrapMenu>
           <LiNav>
-            <LinkMenu to="#">Shop</LinkMenu>
-            <DivWrapMenu>
+            <LinkMenu to="#">
+              Shop
+              <Iicon className="fas fa-chevron-down" />
+            </LinkMenu>
+            <DivWrapMenu className="show-menu">
               <UlMenu>
                 <WomenCol />
               </UlMenu>
