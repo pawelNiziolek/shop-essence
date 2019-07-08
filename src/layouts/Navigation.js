@@ -10,7 +10,7 @@ const WrapNav = styled.div`
   display: flex;
   justify-content: space-between;
   height: 85px;
-  padding: 5px 0 5px 5px;
+  padding: 5px 0 5px 5%;
 `;
 
 const Nav = styled.nav`
@@ -20,12 +20,20 @@ const Nav = styled.nav`
   width: 50%;
 `;
 
+const ImgLogo = styled.img`
+  display: block;
+  height: auto;
+  max-width: 100%;
+  margin-right: 30px;
+  padding: 10px 0;
+`;
+
 const Navigation = () => {
   return (
     <WrapNav>
       <Nav>
-        <Link to={"../pages/Home.js"}>
-          <img src={logo} alt="" />
+        <Link to="/">
+          <ImgLogo src={logo} alt="" />
         </Link>
         <MediaClose />
         <Menu />

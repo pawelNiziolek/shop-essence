@@ -13,13 +13,24 @@ const WrapAllDiv = styled.div`
   height: 100vh;
 `;
 
+const HeaderMenu = styled.header`
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #ebebeb;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+`;
+
 function App() {
   return (
     <Router>
       <WrapAllDiv>
-        {<Navigation />}
-        <header>{<Header />}</header>
+        <HeaderMenu> {<Navigation />}</HeaderMenu>
         <main>
+          {<Header />}
           <section>{<Page />}</section>
         </main>
         <footer>{<Footer />}</footer>

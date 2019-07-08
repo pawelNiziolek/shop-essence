@@ -25,6 +25,15 @@ const ImgMenu = styled.img`
   height: 20px;
 `;
 
+const SpanCart = styled.span`
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  color: #0315ff;
+  font-weight: 700;
+  position: absolute;
+  top: -10px;
+`;
+
 const NavRight = () => {
   return (
     <>
@@ -42,7 +51,7 @@ const NavRight = () => {
       <DivLink>
         <Link to="#" id="essenceCartBtn">
           <ImgMenu src={bag} alt="" />
-          <span>3</span>
+          <SpanCart>3</SpanCart>
         </Link>
       </DivLink>
     </>

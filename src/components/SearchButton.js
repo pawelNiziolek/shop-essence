@@ -4,6 +4,23 @@ import styled from "styled-components";
 const Form = styled.form`
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  position: relative;
+  z-index: 1;
+  height: 85px;
+  border-left: 1px solid #ebebeb;
+`;
+
+const ButtonSearch = styled.button`
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+  background-color: transparent;
+  border: none;
+  color: #787878;
+  font-size: 14px;
 `;
 
 const InputSearch = styled.input`
@@ -14,7 +31,7 @@ const InputSearch = styled.input`
   color: #787878;
   font-size: 14px;
   font-weight: 500;
-  -webkit-transition-duration: 500ms;
+  font-family: "Poppins", sans-serif;
   transition-duration: 500ms;
   outline: none;
 `;
@@ -23,7 +40,9 @@ const SearchButon = () => {
   return (
     <>
       <Form action="#">
-        <button type="submit">find</button>
+        <ButtonSearch type="submit">
+          <i className="fas fa-search" />
+        </ButtonSearch>
         <InputSearch
           type="search"
           name="search"

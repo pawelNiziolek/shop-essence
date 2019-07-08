@@ -8,11 +8,17 @@ import bg6 from "../img/bg-img/bg-6.jpg";
 
 const UlWrapMenu = styled.ul`
   display: flex;
+  justify-content: space-around;
+`;
+
+const LiNav = styled.li`
+  list-style: none;
 `;
 
 const LinkMenu = styled.a`
-  padding: 0 12px;
+  padding: 0 15px;
   color: #787878;
+  font-size: 16px;
 `;
 
 const DivWrapMenu = styled.div`
@@ -40,7 +46,7 @@ const Menu = () => {
     <div>
       <div>
         <UlWrapMenu>
-          <li>
+          <LiNav>
             <LinkMenu to="#">Shop</LinkMenu>
             <DivWrapMenu>
               <UlMenu>
@@ -56,13 +62,13 @@ const Menu = () => {
                 <img src={bg6} alt="" />
               </div>
             </DivWrapMenu>
-          </li>
-          <li>
+          </LiNav>
+          <LiNav>
             <LinkMenu to="/blog">Blog</LinkMenu>
-          </li>
-          <li>
+          </LiNav>
+          <LiNav>
             <LinkMenu to="/contact">Contact</LinkMenu>
-          </li>
+          </LiNav>
         </UlWrapMenu>
       </div>
     </div>
