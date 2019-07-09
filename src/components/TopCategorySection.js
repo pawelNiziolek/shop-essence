@@ -28,10 +28,14 @@ const ArtSingleCat = styled.article`
   height: 240px;
   margin: 0 15px;
   background-position: center center;
-  background-size: cover;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   transform: rotate(0) scale(1);
   cursor: pointer;
+  transition: 0.15s;
+  :hover {
+    background-size: 110% auto;
+  }
 `;
 
 const ArtSingleCat1 = styled(ArtSingleCat)`
