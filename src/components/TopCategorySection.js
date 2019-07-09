@@ -23,7 +23,7 @@ const LinkCategory = styled(Link)`
   outline: none;
 `;
 
-const DivSingleCat = styled.div`
+const ArtSingleCat = styled.article`
   width: 32%;
   height: 240px;
   margin: 0 15px;
@@ -34,15 +34,15 @@ const DivSingleCat = styled.div`
   cursor: pointer;
 `;
 
-const DivSingleCat1 = styled(DivSingleCat)`
+const ArtSingleCat1 = styled(ArtSingleCat)`
   background-image: url(${ImgCloth});
 `;
 
-const DivSingleCat2 = styled(DivSingleCat)`
+const ArtSingleCat2 = styled(ArtSingleCat)`
   background-image: url(${ImgShoes});
 `;
 
-const DivSingleCat3 = styled(DivSingleCat)`
+const ArtSingleCat3 = styled(ArtSingleCat)`
   background-image: url(${ImgAcces});
 `;
 
@@ -58,26 +58,26 @@ const DivCover = styled.div`
   }
 `;
 
-const TopCategory = () => {
+const TopCategorySection = () => {
   return (
     <DivContainer>
-      <DivSingleCat1>
+      <ArtSingleCat1>
         <DivCover>
           <LinkCategory to="#">Clothing</LinkCategory>
         </DivCover>
-      </DivSingleCat1>
-      <DivSingleCat2>
+      </ArtSingleCat1>
+      <ArtSingleCat2>
         <DivCover>
           <LinkCategory to="#">Shoes</LinkCategory>
         </DivCover>
-      </DivSingleCat2>
-      <DivSingleCat3>
+      </ArtSingleCat2>
+      <ArtSingleCat3>
         <DivCover>
           <LinkCategory to="#">Accessories</LinkCategory>
         </DivCover>
-      </DivSingleCat3>
+      </ArtSingleCat3>
     </DivContainer>
   );
 };
 
-export default TopCategory;
+export default TopCategorySection;

@@ -10,8 +10,9 @@ const WrapNav = styled.div`
   display: flex;
   justify-content: space-between;
   height: 85px;
-  padding: 5px 0 5px 5%;
-  background-color: #ffffff;
+  padding: 5px 0px 5px 5%;
+  background-color: white;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
 `;
 
 const Nav = styled.nav`

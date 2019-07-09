@@ -23,7 +23,7 @@ const DivContainer = styled.div`
 const DivContent = styled.div`
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 80%;
   margin: 0 auto;
 `;
 
@@ -58,15 +58,13 @@ const LinkBtn = styled(Link)`
   letter-spacing: 1.5px;
   font-weight: 600;
   text-align: center;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  cursor: pointer;
+  transition: 0.2s ease-in-out;
   :hover {
     background-color: #dc0345;
   }
   :focus {
     background-color: #dc0345;
-    box-shadow: 0 0 1px 2px #999;
+    box-shadow: 0 0 2px 2px #999;
   }
 `;
 

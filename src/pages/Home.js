@@ -1,12 +1,14 @@
 import React from "react";
 import WelcomeSection from "../components/WelcomeSection";
-import TopCategory from "../components/TopCategory";
+import TopCategorySection from "../components/TopCategorySection";
+import GlobalSaleSection from "../components/GlobalSaleSection";
 
 const Home = () => {
   return (
     <>
       <WelcomeSection />
-      <TopCategory />
+      <TopCategorySection />
+      <GlobalSaleSection />
     </>
   );
 };
