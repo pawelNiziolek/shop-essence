@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import ImgProd1 from "../img/product-img/product-1.jpg";
 import ImgProd2 from "../img/product-img/product-2.jpg";
 import ImgProd3 from "../img/product-img/product-3.jpg";
@@ -68,12 +68,34 @@ const LinkCart = styled(Link)`
   }
 `;
 
+const heart = keyframes`
+0% {
+  font-weight: 700;
+  color: #ccc;
+}
+20% {
+  font-weight: 200;
+  font-size: 16px;
+  color: #ccc;
+}
+80% {
+  font-weight: 200;
+  font-size: 16px;
+  color: #dc0345;
+}
+100% {
+  font-weight: 700;
+  color: #dc0345;
+}
+`;
+
 const IconHeart = styled.i`
   font-size: 14px;
+  font-weight: 700;
   color: #ccc;
   line-height: 25px;
   z-index: 10;
-  transition: color 0.15s ease-in, font-weight 0.15s 0.15s ease-in;
+  transition: color 0.2s ease-in, font-weight 0.2s 0.15s ease-in;
 `;
 
 const LinkHeart = styled(Link)`
@@ -85,9 +107,10 @@ const LinkHeart = styled(Link)`
   background-color: #ffffff;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
   text-align: center;
+  transition: 0.2s ease-in-out;
   :focus ${IconHeart} {
     color: #dc0345;
-    font-weight: 700;
+    animation: ${heart} 0.3s;
   }
 `;
 
@@ -97,7 +120,7 @@ const DivInfo = styled.div`
   width: 45px;
   top: 20px;
   left: 20px;
-  background-color: #0315ff;
+  background-color: ${props => (props.inf === "New" ? "#0315ff" : "#dc0345")};
   color: #ffffff;
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
@@ -131,26 +154,51 @@ const ParagraphPrice = styled(SpanProduct)`
 `;
 
 const products = [
-  { id: 1, img: ImgProd1, img2: ImgProd4, classProd: "far fa-heart" },
-  { id: 2, img: ImgProd2, img2: ImgProd3, classProd: "far fa-heart" },
-  { id: 3, img: ImgProd3, img2: ImgProd1, classProd: "far fa-heart" },
-  { id: 4, img: ImgProd4, img2: ImgProd2, classProd: "far fa-heart" }
+  {
+    id: 1,
+    img: ImgProd1,
+    img2: ImgProd4,
+    classProd: "far fa-heart",
+    divInf: "New"
+  },
+  {
+    id: 2,
+    img: ImgProd2,
+    img2: ImgProd3,
+    classProd: "far fa-heart",
+    divInf: "-50%"
+  },
+  {
+    id: 3,
+    img: ImgProd3,
+    img2: ImgProd1,
+    classProd: "far fa-heart",
+    divInf: "New"
+  },
+  {
+    id: 4,
+    img: ImgProd4,
+    img2: ImgProd2,
+    classProd: "far fa-heart",
+    divInf: "-30%"
+  }
 ];
 
 const SingleProduct = () => {
   const singleProduct = products.map(product => {
-    const { id, img, img2, classProd } = product;
+    const { id, img, img2, classProd, divInf } = product;
     return (
       <DivSingleProduct key={id}>
         <DivImageOne>
           <Img src={img} alt="" />
+          <DivInfo inf={divInf}>{divInf}</DivInfo>
         </DivImageOne>
         <DivImageTwo>
           <Img src={img2} alt="" />
           <LinkHeart to="#">
             <IconHeart className={classProd} />
           </LinkHeart>
-          <DivInfo>New</DivInfo>
+          <DivInfo inf={divInf}>{divInf}</DivInfo>
           <LinkCart to="#">Add to Cart</LinkCart>
         </DivImageTwo>
         <DivDescription>
