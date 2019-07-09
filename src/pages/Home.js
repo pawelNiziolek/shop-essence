@@ -1,18 +1,18 @@
 import React from "react";
 import WelcomeSection from "../components/WelcomeSection";
 import TopCategorySection from "../components/TopCategorySection";
-import GlobalSaleSection from "../components/GlobalSaleSection";
+import HomeGlobalSaleSection from "../components/HomeGlobalSaleSection";
 import PopProductSection from "../components/PopProductSection";
-import Brands from "../components/Brands";
+import HomeBrands from "../components/HomeBrands";
 
 const Home = () => {
   return (
     <>
       <WelcomeSection />
       <TopCategorySection />
-      <GlobalSaleSection />
+      <HomeGlobalSaleSection />
       <PopProductSection />
-      <Brands />
+      <HomeBrands />
     </>
   );
 };

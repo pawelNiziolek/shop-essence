@@ -17,7 +17,7 @@ const LinkColl = styled(Link)`
   }
 `;
 
-const KidsCol = () => {
+const HomeKidsCol = () => {
   return (
     <>
       <LiCollection bottomLine="1px solid #f2f4f8">
@@ -42,4 +42,4 @@ const KidsCol = () => {
   );
 };
 
-export default KidsCol;
+export default HomeKidsCol;

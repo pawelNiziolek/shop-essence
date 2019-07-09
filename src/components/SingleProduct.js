@@ -73,12 +73,12 @@ const heart = keyframes`
   font-weight: 700;
   color: #ccc;
 }
-20% {
-  font-weight: 200;
+30% {
+  font-weight: 700;
   font-size: 16px;
   color: #ccc;
 }
-80% {
+75% {
   font-weight: 200;
   font-size: 16px;
   color: #dc0345;
@@ -95,7 +95,6 @@ const IconHeart = styled.i`
   color: #ccc;
   line-height: 25px;
   z-index: 10;
-  transition: color 0.2s ease-in, font-weight 0.2s 0.15s ease-in;
 `;
 
 const LinkHeart = styled(Link)`
@@ -110,7 +109,7 @@ const LinkHeart = styled(Link)`
   transition: 0.2s ease-in-out;
   :focus ${IconHeart} {
     color: #dc0345;
-    animation: ${heart} 0.3s;
+    animation: ${heart} 0.4s;
   }
 `;
 

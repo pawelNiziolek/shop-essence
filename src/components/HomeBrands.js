@@ -30,7 +30,7 @@ const imagesBrand = [
   { id: 6, img: Brand6 }
 ];
 
-const Brands = () => {
+const HomeBrands = () => {
   const images = imagesBrand.map(images => {
     const { id, img } = images;
     return (
@@ -42,4 +42,4 @@ const Brands = () => {
   return <DivWrapBrands>{images}</DivWrapBrands>;
 };
 
-export default Brands;
+export default HomeBrands;

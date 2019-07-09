@@ -67,7 +67,7 @@ const LinkBuy = styled(Link)`
   }
 `;
 
-const GlobalSaleSection = () => {
+const HomeGlobalSaleSection = () => {
   return (
     <DivGlobContainer>
       <DivContainer>
@@ -81,4 +81,4 @@ const GlobalSaleSection = () => {
   );
 };
 
-export default GlobalSaleSection;
+export default HomeGlobalSaleSection;

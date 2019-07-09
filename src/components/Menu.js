@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import WomenCol from "../components/WomenCol";
-import MenCol from "../components/MenCol";
-import KidsCol from "../components/KidsCol";
+import HomeWomenCol from "./HomeWomenCol";
+import HomeMenCol from "./HomeMenCol";
+import HomeKidsCol from "./HomeKidsCol";
 import bg6 from "../img/bg-img/bg-6.jpg";
 
 const UlWrapMenu = styled.ul`
@@ -81,13 +81,13 @@ const Menu = () => {
             </LinkMenu>
             <DivWrapMenu>
               <UlMenu>
-                <WomenCol />
+                <HomeWomenCol />
               </UlMenu>
               <UlMenu leftLine="1px solid #f2f4f8">
-                <MenCol />
+                <HomeMenCol />
               </UlMenu>
               <UlMenu leftLine="1px solid #f2f4f8">
-                <KidsCol />
+                <HomeKidsCol />
               </UlMenu>
               <DivImg>
                 <img src={bg6} alt=" brown bag" />

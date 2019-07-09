@@ -17,29 +17,29 @@ const LinkColl = styled(Link)`
   }
 `;
 
-const WomenCol = () => {
+const HomeMenCol = () => {
   return (
     <>
       <LiCollection bottomLine="1px solid #f2f4f8">
-        Women's Collection
+        Men's Collection
       </LiCollection>
       <LiCollection>
-        <LinkColl to="/dresses">Dresses</LinkColl>
+        <LinkColl to="/dresses">T-Shirts</LinkColl>
       </LiCollection>
       <LiCollection>
-        <LinkColl to="/dresses">Blouses &amp; Shirts</LinkColl>
+        <LinkColl to="/dresses">Polo</LinkColl>
       </LiCollection>
       <LiCollection>
-        <LinkColl to="/dresses">T-shirts</LinkColl>
+        <LinkColl to="/dresses">Shirts</LinkColl>
       </LiCollection>
       <LiCollection>
-        <LinkColl to="/dresses">Rompers</LinkColl>
+        <LinkColl to="/dresses">Jackets</LinkColl>
       </LiCollection>
       <LiCollection>
-        <LinkColl to="/dresses">Bras &amp; Panties</LinkColl>
+        <LinkColl to="/dresses">Trench</LinkColl>
       </LiCollection>
     </>
   );
 };
 
-export default WomenCol;
+export default HomeMenCol;
