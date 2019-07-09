@@ -6,10 +6,9 @@ import ImgShoes from "../img/bg-img/bg-3.jpg";
 import ImgAcces from "../img/bg-img/bg-4.jpg";
 
 const DivContainer = styled.div`
-  padding: 80px 5%;
+  padding: 80px 6%;
   display: flex;
   justify-content: space-around;
-  background-image: ${props => props};
 `;
 
 const LinkCategory = styled(Link)`
@@ -25,12 +24,35 @@ const LinkCategory = styled(Link)`
 `;
 
 const DivSingleCat = styled.div`
+  width: 32%;
+  height: 240px;
+  margin: 0 15px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotate(0) scale(1);
+  cursor: pointer;
+`;
+
+const DivSingleCat1 = styled(DivSingleCat)`
+  background-image: url(${ImgCloth});
+`;
+
+const DivSingleCat2 = styled(DivSingleCat)`
+  background-image: url(${ImgShoes});
+`;
+
+const DivSingleCat3 = styled(DivSingleCat)`
+  background-image: url(${ImgAcces});
+`;
+
+const DivCover = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 33.33%;
-  height: 240px;
-  padding: 0 15px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
   :hover > ${LinkCategory} {
     color: #0315ff;
   }
@@ -39,15 +61,21 @@ const DivSingleCat = styled.div`
 const TopCategory = () => {
   return (
     <DivContainer>
-      <DivSingleCat images={ImgCloth}>
-        <LinkCategory to="#">Clothing</LinkCategory>
-      </DivSingleCat>
-      <DivSingleCat images={ImgShoes}>
-        <LinkCategory to="#">Shoes</LinkCategory>
-      </DivSingleCat>
-      <DivSingleCat images={ImgAcces}>
-        <LinkCategory to="#">Accessories</LinkCategory>
-      </DivSingleCat>
+      <DivSingleCat1>
+        <DivCover>
+          <LinkCategory to="#">Clothing</LinkCategory>
+        </DivCover>
+      </DivSingleCat1>
+      <DivSingleCat2>
+        <DivCover>
+          <LinkCategory to="#">Shoes</LinkCategory>
+        </DivCover>
+      </DivSingleCat2>
+      <DivSingleCat3>
+        <DivCover>
+          <LinkCategory to="#">Accessories</LinkCategory>
+        </DivCover>
+      </DivSingleCat3>
     </DivContainer>
   );
 };
