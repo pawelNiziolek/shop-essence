@@ -129,31 +129,31 @@ const ParagraphPrice = styled(SpanProduct)`
 `;
 
 // const Product = [
-  {img: }
-]
+//   {img: }
+// ]
 
 const SingleProduct = () => {
   return (
-      <DivSingleProduct>
-        <DivImageOne>
-          <Img src={ImgProd1} alt="" />
-        </DivImageOne>
-        <DivImageTwo>
-          <Img src={ImgProd2} alt="" />
-          <LinkHeart to="#">
-            <IconHeart className="far fa-heart" />
-          </LinkHeart>
-          <DivInfo>New</DivInfo>
-          <LinkCart to="#">Add to Cart</LinkCart>
-        </DivImageTwo>
-        <DivDescription>
-          <SpanShop>topshop</SpanShop>
-          <Link to="#">
-            <SpanProduct>Knot Front Mini Dress</SpanProduct>
-          </Link>
-          <ParagraphPrice>$80.00</ParagraphPrice>
-        </DivDescription>
-      </DivSingleProduct>
+    <DivSingleProduct>
+      <DivImageOne>
+        <Img src={ImgProd1} alt="" />
+      </DivImageOne>
+      <DivImageTwo>
+        <Img src={ImgProd2} alt="" />
+        <LinkHeart to="#">
+          <IconHeart className="far fa-heart" />
+        </LinkHeart>
+        <DivInfo>New</DivInfo>
+        <LinkCart to="#">Add to Cart</LinkCart>
+      </DivImageTwo>
+      <DivDescription>
+        <SpanShop>topshop</SpanShop>
+        <Link to="#">
+          <SpanProduct>Knot Front Mini Dress</SpanProduct>
+        </Link>
+        <ParagraphPrice>$80.00</ParagraphPrice>
+      </DivDescription>
+    </DivSingleProduct>
   );
 };
 
