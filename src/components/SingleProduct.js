@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ImgProd1 from "../img/product-img/product-1.jpg";
 import ImgProd2 from "../img/product-img/product-2.jpg";
+import ImgProd3 from "../img/product-img/product-3.jpg";
+import ImgProd4 from "../img/product-img/product-4.jpg";
 
 const DivImageOne = styled.div`
   position: relative;
@@ -128,33 +130,40 @@ const ParagraphPrice = styled(SpanProduct)`
   color: #000000;
 `;
 
-// const Product = [
-//   {img: }
-// ]
+const products = [
+  { id: 1, img: ImgProd1, img2: ImgProd4, classProd: "far fa-heart" },
+  { id: 2, img: ImgProd2, img2: ImgProd3, classProd: "far fa-heart" },
+  { id: 3, img: ImgProd3, img2: ImgProd1, classProd: "far fa-heart" },
+  { id: 4, img: ImgProd4, img2: ImgProd2, classProd: "far fa-heart" }
+];
 
 const SingleProduct = () => {
-  return (
-    <DivSingleProduct>
-      <DivImageOne>
-        <Img src={ImgProd1} alt="" />
-      </DivImageOne>
-      <DivImageTwo>
-        <Img src={ImgProd2} alt="" />
-        <LinkHeart to="#">
-          <IconHeart className="far fa-heart" />
-        </LinkHeart>
-        <DivInfo>New</DivInfo>
-        <LinkCart to="#">Add to Cart</LinkCart>
-      </DivImageTwo>
-      <DivDescription>
-        <SpanShop>topshop</SpanShop>
-        <Link to="#">
-          <SpanProduct>Knot Front Mini Dress</SpanProduct>
-        </Link>
-        <ParagraphPrice>$80.00</ParagraphPrice>
-      </DivDescription>
-    </DivSingleProduct>
-  );
+  const singleProduct = products.map(product => {
+    const { id, img, img2, classProd } = product;
+    return (
+      <DivSingleProduct key={id}>
+        <DivImageOne>
+          <Img src={img} alt="" />
+        </DivImageOne>
+        <DivImageTwo>
+          <Img src={img2} alt="" />
+          <LinkHeart to="#">
+            <IconHeart className={classProd} />
+          </LinkHeart>
+          <DivInfo>New</DivInfo>
+          <LinkCart to="#">Add to Cart</LinkCart>
+        </DivImageTwo>
+        <DivDescription>
+          <SpanShop>topshop</SpanShop>
+          <Link to="#">
+            <SpanProduct>Knot Front Mini Dress</SpanProduct>
+          </Link>
+          <ParagraphPrice>$80.00</ParagraphPrice>
+        </DivDescription>
+      </DivSingleProduct>
+    );
+  });
+  return singleProduct;
 };
 
 export default SingleProduct;
