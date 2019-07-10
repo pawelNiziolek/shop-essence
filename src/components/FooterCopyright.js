@@ -23,7 +23,8 @@ const FooterCopyright = () => {
     <DivCopyright>
       <Pcopyright>
         Copyright &copy;2019 Paweł Niziołek | All rights reserved | This
-        template is inspired <i class="fa fa-heart-o" aria-hidden="true" /> by{" "}
+        template is inspired <i className="fa fa-heart-o" aria-hidden="true" />{" "}
+        by{" "}
         <LinkColor
           href="https://colorlib.com"
           target="_blank"

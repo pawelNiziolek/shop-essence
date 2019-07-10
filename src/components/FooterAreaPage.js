@@ -50,7 +50,7 @@ const liPages = [
 
 const FooterAreaPage = () => {
   const liPage = liPages.map(li => (
-    <li>
+    <li key={li.id}>
       <LinkPage to={li.path}>{li.title}</LinkPage>
     </li>
   ));
