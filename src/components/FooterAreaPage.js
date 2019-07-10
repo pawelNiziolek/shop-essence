@@ -42,7 +42,18 @@ const LinkPage = styled(Link)`
   }
 `;
 
+const liPages = [
+  { id: 1, path: "/shop", title: "Shop" },
+  { id: 2, path: "/blog", title: "Blog" },
+  { id: 3, path: "/contact", title: "Contact" }
+];
+
 const FooterAreaPage = () => {
+  const liPage = liPages.map(li => (
+    <li>
+      <LinkPage to={li.path}>{li.title}</LinkPage>
+    </li>
+  ));
   return (
     <DivWrapInfo>
       <DivLogo>
@@ -50,17 +61,7 @@ const FooterAreaPage = () => {
           <ImgInfo src={logo2} alt="logo Essence" />
         </Link>
       </DivLogo>
-      <UlPage>
-        <li>
-          <LinkPage to="/shop">Shop</LinkPage>
-        </li>
-        <li>
-          <LinkPage to="/blog">Blog</LinkPage>
-        </li>
-        <li>
-          <LinkPage to="/contact">Contact</LinkPage>
-        </li>
-      </UlPage>
+      <UlPage>{liPage}</UlPage>
     </DivWrapInfo>
   );
 };

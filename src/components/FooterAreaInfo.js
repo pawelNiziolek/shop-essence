@@ -33,29 +33,24 @@ const LinkInfo = styled(Link)`
   }
 `;
 
+const infoLinks = [
+  { id: 1, title: "Order Status" },
+  { id: 2, title: "Payment Options" },
+  { id: 3, title: "Shipping and Delivery" },
+  { id: 4, title: "Guides" },
+  { id: 5, title: "Privacy Policy" },
+  { id: 6, title: "Terms of Use" }
+];
+
 const FooterAreaInfo = () => {
+  const info = infoLinks.map(el => (
+    <LiInfo key={el.id}>
+      <LinkInfo to="#">{el.title}</LinkInfo>
+    </LiInfo>
+  ));
   return (
     <DivWrapInfo>
-      <UlInfo>
-        <LiInfo>
-          <LinkInfo to="#">Order Status</LinkInfo>
-        </LiInfo>
-        <LiInfo>
-          <LinkInfo to="#">Payment Options</LinkInfo>
-        </LiInfo>
-        <LiInfo>
-          <LinkInfo to="#">Shipping and Delivery</LinkInfo>
-        </LiInfo>
-        <LiInfo>
-          <LinkInfo to="#">Guides</LinkInfo>
-        </LiInfo>
-        <LiInfo>
-          <LinkInfo to="#">Privacy Policy</LinkInfo>
-        </LiInfo>
-        <LiInfo>
-          <LinkInfo to="#">Terms of Use</LinkInfo>
-        </LiInfo>
-      </UlInfo>
+      <UlInfo>{info}</UlInfo>
     </DivWrapInfo>
   );
 };
