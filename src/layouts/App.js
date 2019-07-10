@@ -29,13 +29,20 @@ const HeaderMenu = styled.header`
   transition-duration: 500ms;
 `;
 
+const FooterArea = styled.footer`
+  position: relative;
+  z-index: 1;
+  background-color: #252525;
+  padding: 70px 0 60px;
+`;
+
 function App() {
   return (
     <Router>
       <WrapAllDiv>
         <HeaderMenu> {<Navigation />}</HeaderMenu>
         <Main>{<Page />}</Main>
-        <footer>{<Footer />}</footer>
+        <FooterArea>{<Footer />}</FooterArea>
       </WrapAllDiv>
     </Router>
   );
