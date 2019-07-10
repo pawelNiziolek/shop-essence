@@ -183,7 +183,7 @@ const products = [
   }
 ];
 
-const SingleProduct = () => {
+const HomeSingleProduct = () => {
   const singleProduct = products.map(product => {
     const { id, img, img2, classProd, divInf } = product;
     return (
@@ -213,4 +213,4 @@ const SingleProduct = () => {
   return singleProduct;
 };
 
-export default SingleProduct;
+export default HomeSingleProduct;

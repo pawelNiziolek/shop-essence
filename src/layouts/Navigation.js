@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import MediaClose from "../components/MediaClose";
-import Menu from "../components/Menu";
-import NavRight from "../components/NavRight";
+import NavigationMenu from "../components/NavigationMenu";
+import NavigationNavRight from "../components/NavigationNavRight";
 import logo from "../img/core-img/logo.png";
 
 const WrapNav = styled.div`
@@ -37,10 +37,10 @@ const Navigation = () => {
           <ImgLogo src={logo} alt="" />
         </Link>
         <MediaClose />
-        <Menu />
+        <NavigationMenu />
       </Nav>
       <Nav navJusContent="flex-end">
-        <NavRight />
+        <NavigationNavRight />
       </Nav>
     </WrapNav>
   );

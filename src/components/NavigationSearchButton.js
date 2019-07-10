@@ -39,7 +39,7 @@ const InputSearch = styled.input`
   }
 `;
 
-const SearchButon = () => {
+const NavigationSearchButon = () => {
   return (
     <>
       <Form action="#">
@@ -58,4 +58,4 @@ const SearchButon = () => {
   );
 };
 
-export default SearchButon;
+export default NavigationSearchButon;

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import heart from "../img/core-img/heart.svg";
 import user from "../img/core-img/user.svg";
 import bag from "../img/core-img/bag.svg";
-import SearchButton from "../components/SearchButton";
+import NavigationSearchButton from "./NavigationSearchButton";
 
 const DivLink = styled.div`
   position: relative;
@@ -34,10 +34,10 @@ const SpanCart = styled.span`
   top: -10px;
 `;
 
-const NavRight = () => {
+const NavigationNavRight = () => {
   return (
     <>
-      <SearchButton />
+      <NavigationSearchButton />
       <DivLink>
         <Link to="#">
           <ImgMenu src={heart} alt="heart icon" />
@@ -58,4 +58,4 @@ const NavRight = () => {
   );
 };
 
-export default NavRight;
+export default NavigationNavRight;

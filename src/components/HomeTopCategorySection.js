@@ -62,7 +62,7 @@ const DivCover = styled.div`
   }
 `;
 
-const TopCategorySection = () => {
+const HomeTopCategorySection = () => {
   return (
     <DivContainer>
       <ArtSingleCat1>
@@ -84,4 +84,4 @@ const TopCategorySection = () => {
   );
 };
 
-export default TopCategorySection;
+export default HomeTopCategorySection;

@@ -68,7 +68,7 @@ const LinkBtn = styled(Link)`
   }
 `;
 
-const WelcomeSection = () => {
+const HomeWelcomeSection = () => {
   return (
     <SectionWelcome>
       <DivContainer>
@@ -82,4 +82,4 @@ const WelcomeSection = () => {
   );
 };
 
-export default WelcomeSection;
+export default HomeWelcomeSection;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import SingleProduct from "./SingleProduct";
+import HomeSingleProduct from "./HomeSingleProduct";
 
 const SectionProductWrap = styled.section`
   padding: 80px 15px;
@@ -27,17 +27,17 @@ const ArticleProducts = styled.article`
   justify-content: space-between;
 `;
 
-const PopProductSection = () => {
+const HomePopProductSection = () => {
   return (
     <SectionProductWrap>
       <DivTitle>
         <SpanTitle>Popular Products</SpanTitle>
       </DivTitle>
       <ArticleProducts>
-        <SingleProduct />
+        <HomeSingleProduct />
       </ArticleProducts>
     </SectionProductWrap>
   );
 };
 
-export default PopProductSection;
+export default HomePopProductSection;

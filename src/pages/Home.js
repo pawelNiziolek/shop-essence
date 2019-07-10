@@ -1,17 +1,17 @@
 import React from "react";
-import WelcomeSection from "../components/WelcomeSection";
-import TopCategorySection from "../components/TopCategorySection";
+import HomeWelcomeSection from "../components/HomeWelcomeSection";
+import HomeTopCategorySection from "../components/HomeTopCategorySection";
 import HomeGlobalSaleSection from "../components/HomeGlobalSaleSection";
-import PopProductSection from "../components/PopProductSection";
+import HomePopProductSection from "../components/HomePopProductSection";
 import HomeBrands from "../components/HomeBrands";
 
 const Home = () => {
   return (
     <>
-      <WelcomeSection />
-      <TopCategorySection />
+      <HomeWelcomeSection />
+      <HomeTopCategorySection />
       <HomeGlobalSaleSection />
-      <PopProductSection />
+      <HomePopProductSection />
       <HomeBrands />
     </>
   );
