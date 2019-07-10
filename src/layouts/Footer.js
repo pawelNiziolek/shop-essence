@@ -3,6 +3,7 @@ import styled from "styled-components";
 import FooterAreaPage from "../components/FooterAreaPage";
 import FooterAreaInfo from "../components/FooterAreaInfo";
 import FooterAreaSub from "../components/FooterAreaSub";
+import FooterCopyright from "../components/FooterCopyright";
 
 const DivContainer = styled.div`
   width: 100%;
@@ -16,6 +17,11 @@ const ArtInfo = styled.article`
   margin-left: -15px;
 `;
 
+const ArtCopyright = styled(ArtInfo)`
+  padding-top: 50px;
+  justify-content: center;
+`;
+
 const Footer = () => {
   return (
     <DivContainer>
@@ -26,6 +32,9 @@ const Footer = () => {
       <ArtInfo>
         <FooterAreaSub />
       </ArtInfo>
+      <ArtCopyright>
+        <FooterCopyright />
+      </ArtCopyright>
     </DivContainer>
   );
 };

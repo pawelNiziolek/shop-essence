@@ -67,14 +67,12 @@ const FooterAreaSub = () => {
         <DivSubs>
           <SpanSub>Subscribe</SpanSub>
         </DivSubs>
-        <div>
-          <FormSub action="#">
-            <InputSub type="email" name="mail" placeholder="Your email here" />
-            <ButtonSub type="submit">
-              <i className="fa fa-long-arrow-right" aria-hidden="true" />
-            </ButtonSub>
-          </FormSub>
-        </div>
+        <FormSub action="#">
+          <InputSub type="email" name="mail" placeholder="Your email here" />
+          <ButtonSub type="submit">
+            <i className="fa fa-long-arrow-right" aria-hidden="true" />
+          </ButtonSub>
+        </FormSub>
       </DivSubsWrap>
       <DivSocial>
         <FooterSocial />
