@@ -19,7 +19,7 @@ const DivImageTwo = styled.div`
 const DivSingleProduct = styled.div`
   display: flex;
   flex-direction: column;
-  width: 210px;
+  width: 260px;
   margin-bottom: 50px;
   :hover ${DivImageOne} {
     display: none;
