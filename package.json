@@ -4,10 +4,10 @@
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
-    "react-back-to-top-button": "0.0.14",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-scroll-up-button": "^1.6.4",
     "styled-components": "^4.3.2"
   },
   "scripts": {
