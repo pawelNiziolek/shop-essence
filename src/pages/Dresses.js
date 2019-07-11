@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ImgBread from "../img/bg-img/breadcumb.jpg";
 import ShopLeftPanel from "../components/ShopLeftPanel";
+import ShopRightPanel from "../components/ShopRightPanel";
 
 const HeaderWrap = styled.header`
   position: relative;
@@ -51,7 +52,7 @@ const Dresses = () => {
       </HeaderWrap>
       <DivContainer>
         <ShopLeftPanel />
-        {/* <ShopRightPanel/> */}
+        <ShopRightPanel />
       </DivContainer>
     </>
   );
