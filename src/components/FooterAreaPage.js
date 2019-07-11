@@ -43,7 +43,7 @@ const LinkPage = styled(Link)`
 `;
 
 const liPages = [
-  { id: 1, path: "/shop", title: "Shop" },
+  { id: 1, path: "/dresses", title: "Shop" },
   { id: 2, path: "/blog", title: "Blog" },
   { id: 3, path: "/contact", title: "Contact" }
 ];

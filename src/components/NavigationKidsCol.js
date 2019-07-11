@@ -17,20 +17,20 @@ const LinkColl = styled(Link)`
   }
 `;
 
-const HomeMenCol = () => {
+const NavigationKidsCol = () => {
   return (
     <>
       <LiCollection bottomLine="1px solid #f2f4f8">
-        Men's Collection
+        Kid's Collection
       </LiCollection>
       <LiCollection>
-        <LinkColl to="/dresses">T-Shirts</LinkColl>
-      </LiCollection>
-      <LiCollection>
-        <LinkColl to="/dresses">Polo</LinkColl>
+        <LinkColl to="/dresses">Dresses</LinkColl>
       </LiCollection>
       <LiCollection>
         <LinkColl to="/dresses">Shirts</LinkColl>
+      </LiCollection>
+      <LiCollection>
+        <LinkColl to="/dresses">T-shirts</LinkColl>
       </LiCollection>
       <LiCollection>
         <LinkColl to="/dresses">Jackets</LinkColl>
@@ -42,4 +42,4 @@ const HomeMenCol = () => {
   );
 };
 
-export default HomeMenCol;
+export default NavigationKidsCol;
