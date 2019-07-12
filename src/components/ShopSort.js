@@ -40,7 +40,7 @@ const SelectSort = styled.select`
   font-family: "Poppins", "sans-serif";
 `;
 
-const ShopSectionSort = () => {
+const ShopSort = () => {
   return (
     <DivWrap>
       <P>
@@ -48,18 +48,17 @@ const ShopSectionSort = () => {
       </P>
       <DivSort>
         <Psort>Sort by:</Psort>
-        <form action="#" method="get">
-          <SelectSort name="select" id="sortByselect">
-            <option value="value">Highest Rated</option>
-            <option value="value">Newest</option>
-            <option value="value">Price: $$ - $</option>
-            <option value="value">Price: $ - $$</option>
+        <form action="#">
+          <SelectSort>
+            <option>Highest Rated</option>
+            <option>Newest</option>
+            <option>Price: $$ - $</option>
+            <option>Price: $ - $$</option>
           </SelectSort>
-          {/* <input type="submit" value="" /> */}
         </form>
       </DivSort>
     </DivWrap>
   );
 };
 
-export default ShopSectionSort;
+export default ShopSort;

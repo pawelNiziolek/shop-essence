@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import HomeSingleProduct from "./HomeSingleProduct";
+import HomeProducts from "./HomeProducts";
 
 const SectionProductWrap = styled.section`
   padding: 80px 15px;
@@ -34,7 +34,7 @@ const HomePopProductSection = () => {
         <SpanTitle>Popular Products</SpanTitle>
       </DivTitle>
       <ArticleProducts>
-        <HomeSingleProduct />
+        <HomeProducts />
       </ArticleProducts>
     </SectionProductWrap>
   );
