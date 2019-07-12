@@ -15,6 +15,7 @@ const SectionProducts = styled.section`
 const shopProducts = [
   {
     id: 1,
+    path: "/single",
     img: ImgProd1,
     img2: ImgProd4,
     classProd: "far fa-heart",
@@ -25,6 +26,7 @@ const shopProducts = [
   },
   {
     id: 2,
+    path: "/single",
     img: ImgProd2,
     img2: ImgProd3,
     classProd: "far fa-heart",
@@ -35,6 +37,7 @@ const shopProducts = [
   },
   {
     id: 3,
+    path: "/single",
     img: ImgProd3,
     img2: ImgProd1,
     classProd: "far fa-heart",
@@ -45,6 +48,7 @@ const shopProducts = [
   },
   {
     id: 4,
+    path: "/single",
     img: ImgProd4,
     img2: ImgProd2,
     classProd: "far fa-heart",
@@ -55,6 +59,7 @@ const shopProducts = [
   },
   {
     id: 5,
+    path: "/single",
     img: ImgProd1,
     img2: ImgProd4,
     classProd: "far fa-heart",
@@ -65,6 +70,7 @@ const shopProducts = [
   },
   {
     id: 6,
+    path: "/single",
     img: ImgProd2,
     img2: ImgProd3,
     classProd: "far fa-heart",
@@ -75,6 +81,7 @@ const shopProducts = [
   },
   {
     id: 7,
+    path: "/single",
     img: ImgProd3,
     img2: ImgProd1,
     classProd: "far fa-heart",
@@ -85,6 +92,7 @@ const shopProducts = [
   },
   {
     id: 8,
+    path: "/single",
     img: ImgProd4,
     img2: ImgProd2,
     classProd: "far fa-heart",
@@ -95,6 +103,7 @@ const shopProducts = [
   },
   {
     id: 9,
+    path: "/single",
     img: ImgProd1,
     img2: ImgProd4,
     classProd: "far fa-heart",
@@ -107,10 +116,21 @@ const shopProducts = [
 
 const ShopProducts = () => {
   const singleShopProduct = shopProducts.map(product => {
-    const { id, img, img2, classProd, divInf, price, title, width } = product;
+    const {
+      id,
+      path,
+      img,
+      img2,
+      classProd,
+      divInf,
+      price,
+      title,
+      width
+    } = product;
     return (
       <HomeSingleProducts
         key={id}
+        path={path}
         img={img}
         img2={img2}
         classProd={classProd}

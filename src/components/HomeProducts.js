@@ -8,6 +8,7 @@ import HomeSingleProducts from "./HomeSingleProduct";
 const products = [
   {
     id: 1,
+    path: "/single",
     img: ImgProd1,
     img2: ImgProd4,
     classProd: "far fa-heart",
@@ -18,6 +19,7 @@ const products = [
   },
   {
     id: 2,
+    path: "/single",
     img: ImgProd2,
     img2: ImgProd3,
     classProd: "far fa-heart",
@@ -28,6 +30,7 @@ const products = [
   },
   {
     id: 3,
+    path: "/single",
     img: ImgProd3,
     img2: ImgProd1,
     classProd: "far fa-heart",
@@ -38,6 +41,7 @@ const products = [
   },
   {
     id: 4,
+    path: "/single",
     img: ImgProd4,
     img2: ImgProd2,
     classProd: "far fa-heart",

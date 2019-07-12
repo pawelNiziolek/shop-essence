@@ -4,7 +4,6 @@ import HomeTopCategorySection from "../components/HomeTopCategorySection";
 import HomeGlobalSaleSection from "../components/HomeGlobalSaleSection";
 import HomePopProductSection from "../components/HomePopProductSection";
 import HomeBrands from "../components/HomeBrands";
-import BtnUp from "../layouts/BtnUp";
 
 const Home = () => {
   return (
@@ -14,7 +13,6 @@ const Home = () => {
       <HomeGlobalSaleSection />
       <HomePopProductSection />
       <HomeBrands />
-      <BtnUp />
     </>
   );
 };

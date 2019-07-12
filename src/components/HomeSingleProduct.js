@@ -149,7 +149,7 @@ const ParagraphPrice = styled(SpanProduct)`
 `;
 
 const HomeSingleProduct = props => {
-  const { id, img, img2, classProd, divInf, price, title, width } = props;
+  const { id, path, img, img2, classProd, divInf, price, title, width } = props;
   return (
     <DivSingleProduct key={id} width={width}>
       <DivImageOne>
@@ -166,7 +166,7 @@ const HomeSingleProduct = props => {
       </DivImageTwo>
       <DivDescription>
         <SpanShop>topshop</SpanShop>
-        <Link to="#">
+        <Link to={path}>
           <SpanProduct>{title}</SpanProduct>
         </Link>
         <ParagraphPrice>{price}</ParagraphPrice>

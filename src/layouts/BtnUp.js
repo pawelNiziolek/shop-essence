@@ -5,7 +5,7 @@ const BtnUp = () => {
   return (
     <ScrollUpButton
       EasingType="easeInOutQuart"
-      AnimationDuration={900}
+      AnimationDuration={800}
       style={{
         backgroundColor: "#ff084e",
         padding: "0 12px",

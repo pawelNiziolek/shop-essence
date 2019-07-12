@@ -3,19 +3,18 @@ import styled from "styled-components";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 import Page from "./Page";
+import BtnUp from "../layouts/BtnUp";
 import { BrowserRouter as Router } from "react-router-dom";
 
 const WrapAllDiv = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 100vh;
   max-width: 1400px;
   margin: 0 auto;
 `;
 
 const Main = styled.main`
-  min-height: 100vh;
   margin-top: 85px;
 `;
 
@@ -41,7 +40,10 @@ function App() {
     <Router>
       <WrapAllDiv>
         <HeaderMenu> {<Navigation />}</HeaderMenu>
-        <Main>{<Page />}</Main>
+        <Main>
+          {<Page />}
+          <BtnUp />
+        </Main>
         <FooterArea>{<Footer />}</FooterArea>
       </WrapAllDiv>
     </Router>

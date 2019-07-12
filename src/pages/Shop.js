@@ -3,7 +3,6 @@ import styled from "styled-components";
 import ImgBread from "../img/bg-img/breadcumb.jpg";
 import ShopLeftPanel from "../components/ShopLeftPanel";
 import ShopRightPanel from "../components/ShopRightPanel";
-import BtnUp from "../layouts/BtnUp";
 
 const HeaderWrap = styled.header`
   position: relative;
@@ -55,7 +54,6 @@ const Shop = () => {
         <ShopLeftPanel />
         <ShopRightPanel />
       </DivContainer>
-      <BtnUp />
     </>
   );
 };
