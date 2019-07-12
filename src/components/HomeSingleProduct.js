@@ -15,7 +15,7 @@ const DivImageTwo = styled.div`
 const DivSingleProduct = styled.div`
   display: flex;
   flex-direction: column;
-  width: 260px;
+  width: ${props => props.width};
   margin-bottom: 50px;
   :hover ${DivImageOne} {
     display: none;
@@ -149,9 +149,9 @@ const ParagraphPrice = styled(SpanProduct)`
 `;
 
 const HomeSingleProduct = props => {
-  const { id, img, img2, classProd, divInf, price, title } = props;
+  const { id, img, img2, classProd, divInf, price, title, width } = props;
   return (
-    <DivSingleProduct key={id}>
+    <DivSingleProduct key={id} width={width}>
       <DivImageOne>
         <Img src={img} alt="" />
         <DivInfo inf={divInf}>{divInf}</DivInfo>

@@ -57,7 +57,7 @@ const FooterAreaPage = () => {
   return (
     <DivWrapInfo>
       <DivLogo>
-        <Link to="#">
+        <Link to="/">
           <ImgInfo src={logo2} alt="logo Essence" />
         </Link>
       </DivLogo>

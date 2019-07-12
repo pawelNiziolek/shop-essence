@@ -20,7 +20,8 @@ const shopProducts = [
     classProd: "far fa-heart",
     divInf: "New",
     price: "$80.00",
-    title: "Knot Front Mini Dress"
+    title: "Knot Front Mini Dress",
+    width: "30%"
   },
   {
     id: 2,
@@ -29,7 +30,8 @@ const shopProducts = [
     classProd: "far fa-heart",
     divInf: "-50%",
     price: "$50.00",
-    title: "Knot Front Mini Dress"
+    title: "Knot Front Mini Dress",
+    width: "30%"
   },
   {
     id: 3,
@@ -38,7 +40,8 @@ const shopProducts = [
     classProd: "far fa-heart",
     divInf: "New",
     price: "$90.00",
-    title: "Knot Front Mini Dress"
+    title: "Knot Front Mini Dress",
+    width: "30%"
   },
   {
     id: 4,
@@ -47,7 +50,8 @@ const shopProducts = [
     classProd: "far fa-heart",
     divInf: "-30%",
     price: "$80.00",
-    title: "Knot Front Mini Dress"
+    title: "Knot Front Mini Dress",
+    width: "30%"
   },
   {
     id: 5,
@@ -56,7 +60,8 @@ const shopProducts = [
     classProd: "far fa-heart",
     divInf: "New",
     price: "$80.00",
-    title: "Knot Front Mini Dress"
+    title: "Knot Front Mini Dress",
+    width: "30%"
   },
   {
     id: 6,
@@ -65,7 +70,8 @@ const shopProducts = [
     classProd: "far fa-heart",
     divInf: "-50%",
     price: "$50.00",
-    title: "Knot Front Mini Dress"
+    title: "Knot Front Mini Dress",
+    width: "30%"
   },
   {
     id: 7,
@@ -74,7 +80,8 @@ const shopProducts = [
     classProd: "far fa-heart",
     divInf: "New",
     price: "$90.00",
-    title: "Knot Front Mini Dress"
+    title: "Knot Front Mini Dress",
+    width: "30%"
   },
   {
     id: 8,
@@ -83,7 +90,8 @@ const shopProducts = [
     classProd: "far fa-heart",
     divInf: "-30%",
     price: "$80.00",
-    title: "Knot Front Mini Dress"
+    title: "Knot Front Mini Dress",
+    width: "30%"
   },
   {
     id: 9,
@@ -92,13 +100,14 @@ const shopProducts = [
     classProd: "far fa-heart",
     divInf: "New",
     price: "$80.00",
-    title: "Knot Front Mini Dress"
+    title: "Knot Front Mini Dress",
+    width: "30%"
   }
 ];
 
 const ShopProducts = () => {
   const singleShopProduct = shopProducts.map(product => {
-    const { id, img, img2, classProd, divInf, price, title } = product;
+    const { id, img, img2, classProd, divInf, price, title, width } = product;
     return (
       <HomeSingleProducts
         key={id}
@@ -108,6 +117,7 @@ const ShopProducts = () => {
         divInf={divInf}
         price={price}
         title={title}
+        width={width}
       />
     );
   });

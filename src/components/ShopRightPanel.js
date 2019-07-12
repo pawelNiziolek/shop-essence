@@ -9,7 +9,7 @@ const DivWrap = styled.div`
   flex-direction: column;
   width: 75%;
   position: relative;
-  padding: 0 15px;
+  margin: 0 15px;
 `;
 
 const ShopRightPanel = () => {

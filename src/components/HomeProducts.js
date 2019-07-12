@@ -13,7 +13,8 @@ const products = [
     classProd: "far fa-heart",
     divInf: "New",
     price: "$80.00",
-    title: "Knot Front Mini Dress"
+    title: "Knot Front Mini Dress",
+    width: "23%"
   },
   {
     id: 2,
@@ -22,7 +23,8 @@ const products = [
     classProd: "far fa-heart",
     divInf: "-50%",
     price: "$50.00",
-    title: "Knot Front Mini Dress"
+    title: "Knot Front Mini Dress",
+    width: "23%"
   },
   {
     id: 3,
@@ -31,7 +33,8 @@ const products = [
     classProd: "far fa-heart",
     divInf: "New",
     price: "$90.00",
-    title: "Knot Front Mini Dress"
+    title: "Knot Front Mini Dress",
+    width: "23%"
   },
   {
     id: 4,
@@ -40,35 +43,15 @@ const products = [
     classProd: "far fa-heart",
     divInf: "-30%",
     price: "$80.00",
-    title: "Knot Front Mini Dress"
+    title: "Knot Front Mini Dress",
+    width: "23%"
   }
 ];
 
 const HomeProducts = () => {
   const singleProduct = products.map(product => {
-    const { id, img, img2, classProd, divInf, price, title } = product;
+    const { id, img, img2, classProd, divInf, price, title, width } = product;
     return (
-      // <DivSingleProduct key={id}>
-      //   <DivImageOne>
-      //     <Img src={img} alt="" />
-      //     <DivInfo inf={divInf}>{divInf}</DivInfo>
-      //   </DivImageOne>
-      //   <DivImageTwo>
-      //     <Img src={img2} alt="" />
-      //     <LinkHeart to="#">
-      //       <IconHeart className={classProd} />
-      //     </LinkHeart>
-      //     <DivInfo inf={divInf}>{divInf}</DivInfo>
-      //     <LinkCart to="#">Add to Cart</LinkCart>
-      //   </DivImageTwo>
-      //   <DivDescription>
-      //     <SpanShop>topshop</SpanShop>
-      //     <Link to="#">
-      //       <SpanProduct>Knot Front Mini Dress</SpanProduct>
-      //     </Link>
-      //     <ParagraphPrice>$80.00</ParagraphPrice>
-      //   </DivDescription>
-      // </DivSingleProduct>
       <HomeSingleProducts
         key={id}
         img={img}
@@ -77,6 +60,7 @@ const HomeProducts = () => {
         divInf={divInf}
         price={price}
         title={title}
+        width={width}
       />
     );
   });
