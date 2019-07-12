@@ -54,10 +54,21 @@ const products = [
 
 const HomeProducts = () => {
   const singleProduct = products.map(product => {
-    const { id, img, img2, classProd, divInf, price, title, width } = product;
+    const {
+      id,
+      path,
+      img,
+      img2,
+      classProd,
+      divInf,
+      price,
+      title,
+      width
+    } = product;
     return (
       <HomeSingleProducts
         key={id}
+        path={path}
         img={img}
         img2={img2}
         classProd={classProd}
