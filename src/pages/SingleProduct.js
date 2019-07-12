@@ -39,7 +39,7 @@ const SpanBrand = styled.span`
   display: block;
 `;
 
-const H2Title = styled.h2`
+const H1Title = styled.h1`
   font-size: 24px;
   margin-bottom: 10px;
   line-height: 1.3;
@@ -48,19 +48,18 @@ const H2Title = styled.h2`
 `;
 
 const Pprice = styled.p`
-  margin-bottom: 0;
   font-family: "Ubuntu", sans-serif;
   font-size: 24px;
   color: #dc0345;
   font-weight: 700;
-  line-height: 2;
+  line-height: 1.5;
 `;
 
 const SpanPrice = styled(Pprice)`
   display: inline-block;
   color: #787878;
   text-decoration: line-through;
-  margin-right: 15px;
+  margin: 0 15px 10px 0;
 `;
 
 const Pdescription = styled.p`
@@ -70,7 +69,62 @@ const Pdescription = styled.p`
     margin: bottom: 16px;
 `;
 
-const DivForm = styled.div``;
+const DivForm = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0 30px;
+`;
+
+const SelectSC = styled.select`
+  position: relative;
+  z-index: 100;
+  border: 1px solid #ebebeb;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #787878;
+  height: 60px;
+  line-height: 60;
+  padding: 0 18px;
+  text-transform: uppercase;
+  width: 45%;
+  outline: none;
+`;
+
+const DivBtn = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+`;
+
+const BtnCart = styled.button`
+  min-width: 170px;
+  height: 50px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  line-height: 50px;
+  color: #ffffff;
+  border: none;
+  padding: 0 40px;
+  text-transform: uppercase;
+  background-color: #0315ff;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+`;
+
+const DivHeart = styled.div`
+  margin-left: 24px;
+`;
+
+const LinkHeart = styled(Link)`
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #ccc;
+  :focus {
+    color: #dc0345;
+  }
+`;
 
 const SingleProduct = () => {
   return (
@@ -84,7 +138,7 @@ const SingleProduct = () => {
       </DivWrapSlider>
       <DivDescription>
         <SpanBrand>mango</SpanBrand>
-        <H2Title>One Shoulder Glitter Midi Dress</H2Title>
+        <H1Title>One Shoulder Glitter Midi Dress</H1Title>
         <Pprice>
           <SpanPrice>$65.00</SpanPrice> $49.00
         </Pprice>
@@ -94,27 +148,25 @@ const SingleProduct = () => {
         </Pdescription>
         <form>
           <DivForm>
-            <select name="select" id="productSize">
+            <SelectSC name="select" id="productSize">
               <option value="value">Size: XL</option>
               <option value="value">Size: X</option>
               <option value="value">Size: M</option>
               <option value="value">Size: S</option>
-            </select>
-            <select name="select" id="productColor">
+            </SelectSC>
+            <SelectSC name="select" id="productColor">
               <option value="value">Color: Black</option>
               <option value="value">Color: White</option>
               <option value="value">Color: Red</option>
               <option value="value">Color: Purple</option>
-            </select>
+            </SelectSC>
           </DivForm>
-          <div>
-            <button type="submit" name="addtocart" value="5">
-              Add to cart
-            </button>
-            <div>
-              <Link to="#" className="favme fa fa-heart" />
-            </div>
-          </div>
+          <DivBtn>
+            <BtnCart type="submit">Add to cart</BtnCart>
+            <DivHeart>
+              <LinkHeart to="#" className="favme fa fa-heart" />
+            </DivHeart>
+          </DivBtn>
         </form>
       </DivDescription>
     </SectionSingleProd>

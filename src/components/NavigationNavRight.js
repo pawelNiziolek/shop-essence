@@ -7,17 +7,12 @@ import bag from "../img/core-img/bag.svg";
 import NavigationSearchButton from "./NavigationSearchButton";
 
 const DivLink = styled.div`
-  position: relative;
-  z-index: 1;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 90px;
-  flex: 0 0 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 90px;
-  display: block;
-  text-align: center;
   border-left: 1px solid #ebebeb;
-  height: 100%;
-  line-height: 80px;
+  line-height: 90px;
 `;
 
 const ImgMenu = styled.img`
