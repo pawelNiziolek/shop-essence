@@ -17,27 +17,26 @@ const LinkColl = styled(Link)`
   }
 `;
 
+const collection = [
+  { id: 1, path: "/shop", title: "Dresses" },
+  { id: 2, path: "/shop", title: "Blouses & Shirts" },
+  { id: 3, path: "/shop", title: "T-shirts" },
+  { id: 4, path: "/shop", title: "Rampers" },
+  { id: 5, path: "/shop", title: "Trench" }
+];
+
 const NavigationWomenCol = () => {
+  const liCollection = collection.map(li => (
+    <LiCollection key={li.id}>
+      <LinkColl to={li.path}>{li.title}</LinkColl>
+    </LiCollection>
+  ));
   return (
     <>
       <LiCollection bottomLine="1px solid #f2f4f8">
         Women's Collection
       </LiCollection>
-      <LiCollection>
-        <LinkColl to="/dresses">Dresses</LinkColl>
-      </LiCollection>
-      <LiCollection>
-        <LinkColl to="/dresses">Blouses &amp; Shirts</LinkColl>
-      </LiCollection>
-      <LiCollection>
-        <LinkColl to="/dresses">T-shirts</LinkColl>
-      </LiCollection>
-      <LiCollection>
-        <LinkColl to="/dresses">Rompers</LinkColl>
-      </LiCollection>
-      <LiCollection>
-        <LinkColl to="/dresses">Bras &amp; Panties</LinkColl>
-      </LiCollection>
+      {liCollection}
     </>
   );
 };

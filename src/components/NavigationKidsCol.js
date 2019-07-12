@@ -17,27 +17,26 @@ const LinkColl = styled(Link)`
   }
 `;
 
+const collection = [
+  { id: 1, path: "/shop", title: "Dresses" },
+  { id: 2, path: "/shop", title: "Shirts" },
+  { id: 3, path: "/shop", title: "T-shirts" },
+  { id: 4, path: "/shop", title: "Jackets" },
+  { id: 5, path: "/shop", title: "Trench" }
+];
+
 const NavigationKidsCol = () => {
+  const liCollection = collection.map(li => (
+    <LiCollection key={li.id}>
+      <LinkColl to={li.path}>{li.title}</LinkColl>
+    </LiCollection>
+  ));
   return (
     <>
       <LiCollection bottomLine="1px solid #f2f4f8">
         Kid's Collection
       </LiCollection>
-      <LiCollection>
-        <LinkColl to="/dresses">Dresses</LinkColl>
-      </LiCollection>
-      <LiCollection>
-        <LinkColl to="/dresses">Shirts</LinkColl>
-      </LiCollection>
-      <LiCollection>
-        <LinkColl to="/dresses">T-shirts</LinkColl>
-      </LiCollection>
-      <LiCollection>
-        <LinkColl to="/dresses">Jackets</LinkColl>
-      </LiCollection>
-      <LiCollection>
-        <LinkColl to="/dresses">Trench</LinkColl>
-      </LiCollection>
+      {liCollection}
     </>
   );
 };

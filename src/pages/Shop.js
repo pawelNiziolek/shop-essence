@@ -43,7 +43,7 @@ const H1Title = styled.h1`
   margin-bottom: 0;
 `;
 
-const Dresses = () => {
+const Shop = () => {
   return (
     <>
       <HeaderWrap>
@@ -60,4 +60,4 @@ const Dresses = () => {
   );
 };
 
-export default Dresses;
+export default Shop;

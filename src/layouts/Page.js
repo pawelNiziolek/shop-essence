@@ -13,7 +13,7 @@ const Page = () => {
         <Route path="/" exact component={Home} />
         <Route path="/blog" component={Blog} />
         <Route path="/contact" component={Contact} />
-        <Route path="/dresses" component={Shop} />
+        <Route path="/shop" component={Shop} />
         <Route component={ErrorPage} />
       </Switch>
     </>
