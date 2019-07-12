@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import HomeSingleProducts from "./HomeProducts";
+import HomeSingleProducts from "./HomeSingleProduct";
 import ImgProd1 from "../img/product-img/product-1.jpg";
 import ImgProd2 from "../img/product-img/product-2.jpg";
 import ImgProd3 from "../img/product-img/product-3.jpg";
@@ -87,10 +87,10 @@ const shopProducts = [
   },
   {
     id: 9,
-    img: ImgProd4,
-    img2: ImgProd2,
+    img: ImgProd1,
+    img2: ImgProd4,
     classProd: "far fa-heart",
-    divInf: "-30%",
+    divInf: "New",
     price: "$80.00",
     title: "Knot Front Mini Dress"
   }

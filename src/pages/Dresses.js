@@ -28,9 +28,9 @@ const DivImage = styled.div`
 
 const DivContainer = styled.div`
   display: flex;
-  width: 90%;
+  width: 88%;
   padding: 0 15px;
-  margin: 5%;
+  margin: 5% 6%;
 `;
 
 const H1Title = styled.h1`
