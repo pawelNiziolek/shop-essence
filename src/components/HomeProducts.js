@@ -4,6 +4,8 @@ import ImgProd2 from "../img/product-img/product-2.jpg";
 import ImgProd3 from "../img/product-img/product-3.jpg";
 import ImgProd4 from "../img/product-img/product-4.jpg";
 import HomeSingleProducts from "./HomeSingleProduct";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 
 const products = [
   {
@@ -15,18 +17,17 @@ const products = [
     divInf: "New",
     price: "$80.00",
     title: "Knot Front Mini Dress",
-    width: "23%"
+    width: "90%"
   },
   {
     id: 2,
     path: "/single",
     img: ImgProd2,
     img2: ImgProd3,
-    classProd: "far fa-heart",
     divInf: "-50%",
     price: "$50.00",
     title: "Knot Front Mini Dress",
-    width: "23%"
+    width: "90%"
   },
   {
     id: 3,
@@ -37,7 +38,7 @@ const products = [
     divInf: "New",
     price: "$90.00",
     title: "Knot Front Mini Dress",
-    width: "23%"
+    width: "90%"
   },
   {
     id: 4,
@@ -48,11 +49,35 @@ const products = [
     divInf: "-30%",
     price: "$80.00",
     title: "Knot Front Mini Dress",
-    width: "23%"
+    width: "90%"
   }
 ];
 
+const settings = {
+  responsive: {
+    0: {
+      items: 1
+    },
+    576: {
+      items: 2
+    },
+    768: {
+      items: 3
+    },
+    992: {
+      items: 4
+    }
+  },
+  mouseDragEnabled: true,
+  buttonsDisabled: true,
+  dotsDisabled: true,
+  duration: 700,
+  autoPlay: true,
+  autoPlayInterval: 6000
+};
+
 const HomeProducts = () => {
+  const handleOnDragStart = e => e.preventDefault();
   const singleProduct = products.map(product => {
     const {
       id,
@@ -79,7 +104,13 @@ const HomeProducts = () => {
       />
     );
   });
-  return singleProduct;
+  return (
+    <AliceCarousel
+      items={singleProduct}
+      onDragStart={handleOnDragStart}
+      {...settings}
+    />
+  );
 };
 
 export default HomeProducts;
