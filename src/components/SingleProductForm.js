@@ -20,7 +20,8 @@ const SelectSC = styled.select`
   line-height: 60;
   padding: 0 18px;
   text-transform: uppercase;
-  width: 45%;
+  width: 50%;
+  margin-right: 50px;
   outline: none;
 `;
 

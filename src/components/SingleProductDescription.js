@@ -13,7 +13,6 @@ const SpanBrand = styled.span`
 const H1Title = styled.h1`
   font-size: 30px;
   margin-bottom: 10px;
-  line-height: 1.3;
   font-weight: 700;
   font-family: "Ubuntu", sans-serif;
 `;
@@ -23,10 +22,12 @@ const Pprice = styled.p`
   font-size: 24px;
   color: #dc0345;
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 2;
 `;
 
-const SpanPrice = styled(Pprice)`
+const SpanPrice = styled.span`
+  font-family: "Ubuntu", sans-serif;
+  font-size: 24px;
   display: inline-block;
   color: #787878;
   text-decoration: line-through;
@@ -36,6 +37,7 @@ const SpanPrice = styled(Pprice)`
 const Pdescription = styled.p`
   font-size: 16px;
   color: #787878;
+  line-height: 2;
   font-weight: 400;
   margin-bottom: 16px;
 `;
