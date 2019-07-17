@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 const DivImageOne = styled.div`
   position: relative;
@@ -22,6 +22,7 @@ const DivSingleProduct = styled.div`
   }
   :hover ${DivImageTwo} {
     display: block;
+    cursor: grab;
   }
 `;
 
@@ -50,7 +51,7 @@ const LinkCart = styled(Link)`
   text-align: center;
   text-transform: uppercase;
   font-size: 12px;
-  line-height: 50px;
+  line-height: 50px !important;
   background-color: #0315ff;
   letter-spacing: 1.5px;
   font-weight: 600;
@@ -64,32 +65,12 @@ const LinkCart = styled(Link)`
   }
 `;
 
-const heart = keyframes`
-0% {
-  font-weight: 700;
-  color: #ccc;
-}
-30% {
-  font-weight: 700;
-  font-size: 16px;
-  color: #ccc;
-}
-75% {
-  font-weight: 200;
-  font-size: 16px;
-  color: #dc0345;
-}
-100% {
-  font-weight: 700;
-  color: #dc0345;
-}
-`;
-
 const IconHeart = styled.i`
-  font-size: 14px;
-  font-weight: 700;
-  color: #ccc;
-  line-height: 25px;
+  font-size: ${props => (props.heartClass ? "14px" : "15px")};
+  font-weight: ${props => (props.heartClass ? "200" : "700")};
+  transition: color 0.3s, font-weight 0.4s 0.2s, font-size 0.6s;
+  color: ${props => (props.heartClass ? "#ccc" : "#dc0345")};
+  line-height: 25px !important;
   z-index: 10;
 `;
 
@@ -103,10 +84,6 @@ const LinkHeart = styled(Link)`
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
   text-align: center;
   transition: 0.2s ease-in-out;
-  :focus ${IconHeart} {
-    color: #dc0345;
-    animation: ${heart} 0.4s;
-  }
 `;
 
 const DivInfo = styled.div`
@@ -120,7 +97,7 @@ const DivInfo = styled.div`
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   font-size: 12px;
-  line-height: 25px;
+  line-height: 25px !important;
   padding: 0 10px;
 `;
 
@@ -135,7 +112,7 @@ const SpanShop = styled.span`
 const SpanProduct = styled.span`
   color: #222222;
   margin-bottom: 5px;
-  line-height: 1.3;
+  line-height: 1.3 !important ;
   font-size: 16px;
   font-weight: 700;
   font-family: "Ubuntu", sans-serif;
@@ -144,11 +121,12 @@ const SpanProduct = styled.span`
 const ParagraphPrice = styled(SpanProduct)`
   margin-bottom: 0;
   font-size: 14px;
-  line-height: 2;
+  line-height: 2 !important ;
   color: #000000;
 `;
 
 const HomeSingleProduct = props => {
+  const [heartClass, setHeartClass] = React.useState(true);
   const { id, path, img, img2, classProd, divInf, price, title, width } = props;
   return (
     <DivSingleProduct key={id} width={width}>
@@ -157,12 +135,17 @@ const HomeSingleProduct = props => {
         <DivInfo inf={divInf}>{divInf}</DivInfo>
       </DivImageOne>
       <DivImageTwo>
-        <Img src={img2} alt="" />
-        <LinkHeart to="#">
-          <IconHeart className={classProd} />
+        <Img src={img2} alt="" draggable={false} />
+        <LinkHeart
+          to="#"
+          onClick={e => (setHeartClass(!heartClass), e.preventDefault())}
+        >
+          <IconHeart className={classProd} heartClass={heartClass} />
         </LinkHeart>
         <DivInfo inf={divInf}>{divInf}</DivInfo>
-        <LinkCart to="#">Add to Cart</LinkCart>
+        <LinkCart to="#" onClick={e => e.preventDefault()} draggable={false}>
+          Add to Cart
+        </LinkCart>
       </DivImageTwo>
       <DivDescription>
         <SpanShop>topshop</SpanShop>

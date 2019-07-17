@@ -24,6 +24,7 @@ const products = [
     path: "/single",
     img: ImgProd2,
     img2: ImgProd3,
+    classProd: "far fa-heart",
     divInf: "-50%",
     price: "$50.00",
     title: "Knot Front Mini Dress",
