@@ -18,7 +18,7 @@ const LinkCategory = styled(Link)`
   color: #000000;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: all 500ms ease 0s;
+  transition: 0.5s;
   text-decoration: none;
   outline: none;
 `;
@@ -30,9 +30,9 @@ const ArtSingleCat = styled.article`
   background-position: center center;
   background-size: 100% auto;
   background-repeat: no-repeat;
-  transform: rotate(0) scale(1);
+  transform: rotate(0);
   cursor: pointer;
-  transition: 0.15s;
+  transition: 0.5s;
   :hover {
     background-size: 110% auto;
   }
