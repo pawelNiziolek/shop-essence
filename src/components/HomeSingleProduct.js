@@ -138,7 +138,7 @@ const HomeSingleProduct = props => {
         <Img src={img2} alt="" draggable={false} />
         <LinkHeart
           to="#"
-          onClick={e => (setHeartClass(!heartClass), e.preventDefault())}
+          onClick={e => e.preventDefault(setHeartClass(!heartClass))}
         >
           <IconHeart className={classProd} heartClass={heartClass} />
         </LinkHeart>
