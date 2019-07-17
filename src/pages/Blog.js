@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import BlogSingleArticle from "../components/BlogSingleArticle";
 import ImgHeader from "../img/bg-img/breadcumb2.jpg";
 
 const HeaderBlog = styled.header`
@@ -33,7 +33,11 @@ const H1Blog = styled.h1`
 `;
 
 const SectionWrap = styled.section`
-  padding: 80px 65px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 80px 100px;
 `;
 
 const Blog = () => {
@@ -45,33 +49,7 @@ const Blog = () => {
         </DivCover>
       </HeaderBlog>
       <SectionWrap>
-        <div>
-          <div>
-            <img src="img/bg-img/blog1.jpg" alt="" />
-            <div>
-              <Link to="#">
-                Vivamus sed nunc in arcu cursus mollis quis et orci. Interdum et
-                malesuada
-              </Link>
-            </div>
-            <div>
-              <div>
-                <Link to="#">
-                  Vivamus sed nunc in arcu cursus mollis quis et orci. Interdum
-                  et malesuada
-                </Link>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                enim nulla, mollis eu metus in, sagittis fringilla tortor.
-                Phasellus purus dignissim convallis.
-              </p>
-              <Link to="#">
-                Continue reading <i class="fa fa-angle-right" />
-              </Link>
-            </div>
-          </div>
-        </div>
+        <BlogSingleArticle />
       </SectionWrap>
     </>
   );
