@@ -22,7 +22,6 @@ const DivSingleProduct = styled.div`
   }
   :hover ${DivImageTwo} {
     display: block;
-    cursor: grab;
   }
 `;
 

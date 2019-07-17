@@ -87,7 +87,9 @@ const SingleProductForm = () => {
         </SelectSC>
       </DivForm>
       <DivBtn>
-        <BtnCart type="submit">Add to cart</BtnCart>
+        <BtnCart type="submit" onClick={e => e.preventDefault()}>
+          Add to cart
+        </BtnCart>
         <DivHeart>
           <LinkHeart to="#" className="favme fa fa-heart" />
         </DivHeart>
