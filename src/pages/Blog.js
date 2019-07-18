@@ -7,6 +7,7 @@ const HeaderBlog = styled.header`
   position: relative;
   background-image: url(${ImgHeader});
   background-size: cover;
+  background-attachment: fixed;
   width: 100%;
   height: 390px;
 `;

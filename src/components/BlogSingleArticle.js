@@ -174,7 +174,7 @@ const BlogSigleArticle = () => {
           <LinkSec to="#">{textTwo}</LinkSec>
           <PSec>{textThree}</PSec>
           <LinkThird to="#">
-            Continue reading <i class="fa fa-angle-right" />
+            Continue reading <i className="fa fa-angle-right" />
           </LinkThird>
         </DivSecond>
       </ArticleBlog>

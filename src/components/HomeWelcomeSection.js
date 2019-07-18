@@ -9,9 +9,10 @@ const SectionWelcome = styled.section`
   width: 100%;
   height: 600px;
   background-image: url(${bgImage});
-  background-position: center center;
+  background-position: center 40px;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 `;
 
 const DivContainer = styled.div`
