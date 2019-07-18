@@ -78,8 +78,8 @@ class ShopFilter extends React.Component {
         <DivSlider>
           <InputRange
             formatLabel={value => `${value} $`}
-            maxValue={360}
             value={this.state.value}
+            maxValue={360}
             minValue={49}
             onChange={value => this.setState({ value })}
           />
