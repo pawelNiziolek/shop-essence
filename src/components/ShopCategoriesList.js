@@ -1,8 +1,6 @@
 import React from "react";
 import ShopSingleList from "./ShopSingleList";
 import styled from "styled-components";
-// import Dropdown from "rc-dropdown";
-// import "rc-dropdown/assets/index.css";
 import SlideToggle from "react-slide-toggle";
 
 const products = [
@@ -54,20 +52,6 @@ const ShopCategoriesList = () => {
   ));
 
   return <DivWrap>{singleProd}</DivWrap>;
-  // const ShopCategoriesList = () => {
-  //   const singleProd = products.map(el => (
-  //     <DivHidden key={el.title}>
-  //       <Dropdown
-  //         trigger={["click"]}
-  //         overlay={<ShopSingleList />}
-  //         animation="slide-up"
-  //       >
-  //         <SpanTitle to={el.path}>{el.title}</SpanTitle>
-  //       </Dropdown>
-  //     </DivHidden>
-  //   ));
-
-  //   return <DivWrap>{singleProd}</DivWrap>;
 };
 
 export default ShopCategoriesList;
