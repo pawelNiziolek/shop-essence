@@ -19,6 +19,7 @@ const items = [
 const UlList = styled.ul`
   margin-left: 15px;
   margin-bottom: 15px;
+  padding: 0 5px;
   list-style: none;
 `;
 
@@ -28,6 +29,7 @@ const LinkItems = styled(Link)`
   text-transform: capitalize;
   font-size: 14px;
   margin-bottom: 5px;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   color: #787878;
   cursor: pointer;

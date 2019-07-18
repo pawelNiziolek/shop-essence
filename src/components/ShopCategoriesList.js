@@ -1,6 +1,9 @@
 import React from "react";
 import ShopSingleList from "./ShopSingleList";
 import styled from "styled-components";
+// import Dropdown from "rc-dropdown";
+// import "rc-dropdown/assets/index.css";
+import SlideToggle from "react-slide-toggle";
 
 const products = [
   { id: 1, path: "#", title: "Clothing" },
@@ -22,30 +25,49 @@ const SpanTitle = styled.span`
   cursor: pointer;
 `;
 
-const DivWrapShopList = styled.div`
-  transition: 0.5s;
-  transform: ${props => (props.show ? "translateY(0%)" : "translateY(-110%)")};
-  height: ${props => (props.show ? "100%" : "0")};
-`;
-
-const DivHidden = styled.div`
+const DivHide = styled.div`
   overflow: hidden;
 `;
 
 const ShopCategoriesList = () => {
-  const [show, setShowUl] = React.useState(false);
   const singleProd = products.map(el => (
-    <DivHidden key={el.title}>
-      <SpanTitle to={el.path} onClick={() => setShowUl(!show)}>
-        {el.title}
-      </SpanTitle>
-      <DivWrapShopList show={show}>
-        <ShopSingleList />
-      </DivWrapShopList>
-    </DivHidden>
+    <SlideToggle key={el.title} collapsed={true}>
+      {({ onToggle, setCollapsibleElement }) => (
+        <div className="my-collapsible">
+          <SpanTitle
+            to={el.path}
+            className="my-collapsible__toggle"
+            onClick={onToggle}
+          >
+            {el.title}
+          </SpanTitle>
+          <DivHide
+            className="my-collapsible__content"
+            ref={setCollapsibleElement}
+            style={{ display: "block !important" }}
+          >
+            <ShopSingleList />
+          </DivHide>
+        </div>
+      )}
+    </SlideToggle>
   ));
 
   return <DivWrap>{singleProd}</DivWrap>;
+  // const ShopCategoriesList = () => {
+  //   const singleProd = products.map(el => (
+  //     <DivHidden key={el.title}>
+  //       <Dropdown
+  //         trigger={["click"]}
+  //         overlay={<ShopSingleList />}
+  //         animation="slide-up"
+  //       >
+  //         <SpanTitle to={el.path}>{el.title}</SpanTitle>
+  //       </Dropdown>
+  //     </DivHidden>
+  //   ));
+
+  //   return <DivWrap>{singleProd}</DivWrap>;
 };
 
 export default ShopCategoriesList;
