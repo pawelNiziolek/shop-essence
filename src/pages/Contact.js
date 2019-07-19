@@ -1,19 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import ContactMap from "../components/ContactMap";
 
 const DivWrap = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-`;
-
-const DivMap = styled.div`
-  width: 60%;
+  position: relative;
 `;
 
 const DivWrapAdress = styled.div`
   width: 40%;
-  padding: 50px;
+  padding: 70px 50px;
 `;
 
 const H1 = styled.h1`
@@ -67,32 +66,41 @@ const Ptwo = styled(Pone)`
 
 const LinkAdress = styled(Link)`
   color: black;
+  transition: 0.3s;
+  :hover {
+    color: #0315ff;
+  }
 `;
 
 const adressList = {
   descr:
     "   Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.",
   adress: "10 Suffolk st Soho, London, UK",
-  phone: "+12 34 567 890 0"
+  phone: "+12 34 567 890 0",
+  linkPhone: "tel:+12345678900"
 };
 
+const DivMap = styled.div`
+  width: 60%;
+`;
+
 const Contact = () => {
-  const { descr, adress, phone } = adressList;
+  const { descr, adress, phone, linkPhone } = adressList;
   return (
     <DivWrap>
       <DivMap>
-        <div id="googleMap" />
+        <ContactMap />
       </DivMap>
       <DivWrapAdress>
         <H1>How to Find Us</H1>
         <PDescription>{descr}</PDescription>
         <DivAdress>
           <Pone>
-            <SpanAdress>address</SpanAdress> {adress}
+            <SpanAdress>address:</SpanAdress> {adress}
           </Pone>
           <Pone>
             <SpanAdress>telephone:</SpanAdress>
-            <LinkTel to="tel: +12 34 567 890 0">{phone}</LinkTel>
+            <LinkTel to={linkPhone}>{phone}</LinkTel>
           </Pone>
           <Ptwo>
             <LinkAdress to="mailto:contact@essence.com">
