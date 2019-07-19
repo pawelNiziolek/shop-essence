@@ -1,6 +1,5 @@
 import React from "react";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
-// import styled from "styled-components";
 
 const mapStyles = {
   top: "-50%",

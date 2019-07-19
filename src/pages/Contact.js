@@ -12,7 +12,7 @@ const DivWrap = styled.div`
 
 const DivWrapAdress = styled.div`
   width: 40%;
-  padding: 70px 50px;
+  padding: 90px 50px;
 `;
 
 const H1 = styled.h1`
@@ -77,7 +77,9 @@ const adressList = {
     "   Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.",
   adress: "10 Suffolk st Soho, London, UK",
   phone: "+12 34 567 890 0",
-  linkPhone: "tel:+12345678900"
+  linkPhone: "tel:+12345678900",
+  mail: "contact@essence.com",
+  linkMail: "mailto:contact@essence.com"
 };
 
 const DivMap = styled.div`
@@ -85,7 +87,7 @@ const DivMap = styled.div`
 `;
 
 const Contact = () => {
-  const { descr, adress, phone, linkPhone } = adressList;
+  const { descr, adress, phone, linkPhone, mail, linkMail } = adressList;
   return (
     <DivWrap>
       <DivMap>
@@ -103,9 +105,7 @@ const Contact = () => {
             <LinkTel to={linkPhone}>{phone}</LinkTel>
           </Pone>
           <Ptwo>
-            <LinkAdress to="mailto:contact@essence.com">
-              contact@essence.com
-            </LinkAdress>
+            <LinkAdress to={linkMail}>{mail}</LinkAdress>
           </Ptwo>
         </DivAdress>
       </DivWrapAdress>
