@@ -18,7 +18,7 @@ const SpanTitle = styled.span`
   margin-bottom: 15px;
   text-transform: uppercase;
   font-size: 12px;
-  color: rgb(33, 37, 41);
+  color: #000000;
   font-weight: 600;
   cursor: pointer;
 `;

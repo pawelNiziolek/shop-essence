@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import InputRange from "react-input-range";
-import "react-input-range/lib/css/index.css";
+import "../otherStyle/inputRange.css";
 
 const DivWrap = styled.div`
   position: relative;
@@ -17,7 +17,7 @@ const H1 = styled.h1`
 `;
 
 const Pprice = styled.p`
-  color: rgb(33, 37, 41);
+  color: black;
   text-transform: uppercase;
   font-size: 12px;
   margin-bottom: 30px;
@@ -26,38 +26,9 @@ const Pprice = styled.p`
 `;
 
 const DivSlider = styled.div`
-  padding: 20px 10px;
+  padding: 10px 10px 0px;
 `;
 
-// const DivSliderRange = styled.div`
-//   background-color: #0315ff;
-//   position: absolute;
-//   z-index: 1;
-//   font-size: 0.7em;
-//   display: block;
-//   border: 0;
-//   background-position: 0 0;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-// `;
-
-// const SpanRight = styled.span`
-//   position: absolute;
-//   z-index: 2;
-//   background-color: #000000;
-//   border: none;
-//   top: -6px;
-//   left: 0%;
-//   width: 4px;
-//   height: 15px;
-//   margin: 0;
-// `;
-
-// const SpanLeft = styled(SpanRight)`
-//   left: 100%;
-// `;
 const DivRange = styled.div`
   color: rgb(33, 37, 41);
   font-size: 12px;
@@ -77,7 +48,7 @@ class ShopFilter extends React.Component {
         <Pprice>Price</Pprice>
         <DivSlider>
           <InputRange
-            formatLabel={value => `${value} $`}
+            formatLabel={value => `${""}`}
             value={this.state.value}
             maxValue={360}
             minValue={49}
