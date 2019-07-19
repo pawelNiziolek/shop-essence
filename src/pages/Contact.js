@@ -13,6 +13,7 @@ const DivWrap = styled.div`
 const DivWrapAdress = styled.div`
   width: 40%;
   padding: 90px 50px;
+  z-index: 99;
 `;
 
 const H1 = styled.h1`
@@ -69,6 +70,7 @@ const LinkAdress = styled(Link)`
   transition: 0.3s;
   :hover {
     color: #0315ff;
+    cursor: pointer;
   }
 `;
 
@@ -77,9 +79,9 @@ const adressList = {
     "   Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.",
   adress: "10 Suffolk st Soho, London, UK",
   phone: "+12 34 567 890 0",
-  linkPhone: "tel:+12345678900",
+  linkPhone: "tel: +12345678900",
   mail: "contact@essence.com",
-  linkMail: "mailto:contact@essence.com"
+  linkMail: "mailto: contact@essence.com"
 };
 
 const DivMap = styled.div`
