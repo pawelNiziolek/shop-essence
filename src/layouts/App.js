@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 import Page from "./Page";
 import BtnUp from "../layouts/BtnUp";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import ScrollToTop from "react-router-scroll-top";
 
 const WrapAllDiv = styled.div`
@@ -36,21 +36,27 @@ const FooterArea = styled.footer`
   padding: 70px 0 60px;
 `;
 
-function App() {
-  return (
-    <Router>
-      <ScrollToTop>
-        <WrapAllDiv>
-          <HeaderMenu> {<Navigation />}</HeaderMenu>
-          <Main>
-            {<Page />}
-            <BtnUp />
-          </Main>
-          <FooterArea>{<Footer />}</FooterArea>
-        </WrapAllDiv>
-      </ScrollToTop>
-    </Router>
-  );
+class App extends React.Component {
+  getConfirmation(message, callback) {
+    const allowTransition = window.confirm(message);
+    callback(allowTransition);
+  }
+  render() {
+    return (
+      <HashRouter getUserConfirmation={this.getConfirmation}>
+        <ScrollToTop>
+          <WrapAllDiv>
+            <HeaderMenu> {<Navigation />}</HeaderMenu>
+            <Main>
+              {<Page />}
+              <BtnUp />
+            </Main>
+            <FooterArea>{<Footer />}</FooterArea>
+          </WrapAllDiv>
+        </ScrollToTop>
+      </HashRouter>
+    );
+  }
 }
 
 export default App;

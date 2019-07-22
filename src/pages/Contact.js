@@ -76,7 +76,7 @@ const LinkAdress = styled(Link)`
 
 const adressList = {
   descr:
-    "   Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.",
+    "Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.",
   adress: "10 Suffolk st Soho, London, UK",
   phone: "+12 34 567 890 0",
   linkPhone: "tel: +12345678900",
