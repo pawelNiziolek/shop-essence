@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Page from "./Page";
 import BtnUp from "../layouts/BtnUp";
 import { BrowserRouter as Router } from "react-router-dom";
+import ScrollToTop from "react-router-scroll-top";
 
 const WrapAllDiv = styled.div`
   display: flex;
@@ -38,14 +39,16 @@ const FooterArea = styled.footer`
 function App() {
   return (
     <Router>
-      <WrapAllDiv>
-        <HeaderMenu> {<Navigation />}</HeaderMenu>
-        <Main>
-          {<Page />}
-          <BtnUp />
-        </Main>
-        <FooterArea>{<Footer />}</FooterArea>
-      </WrapAllDiv>
+      <ScrollToTop>
+        <WrapAllDiv>
+          <HeaderMenu> {<Navigation />}</HeaderMenu>
+          <Main>
+            {<Page />}
+            <BtnUp />
+          </Main>
+          <FooterArea>{<Footer />}</FooterArea>
+        </WrapAllDiv>
+      </ScrollToTop>
     </Router>
   );
 }
