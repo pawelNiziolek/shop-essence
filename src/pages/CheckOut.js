@@ -18,7 +18,7 @@ const DivWrap = styled.div`
 const CheckOut = () => {
   return (
     <>
-      <ShopCheckHeader title="check out" />
+      <ShopCheckHeader title="checkout" />
       <DivWrapAll>
         <DivWrap width="60%">
           <div>
