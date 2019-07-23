@@ -2,6 +2,7 @@ import React from "react";
 import ShopCheckHeader from "../components/ShopCheckHeader";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import useForm from "react-hook-form";
 
 const DivWrapAll = styled.div`
   display: flex;
@@ -9,19 +10,133 @@ const DivWrapAll = styled.div`
 `;
 
 const DivWrap = styled.div`
-  display: flex;
-  flex-direction: column;
   width: ${props => props.width};
   padding: 60px 50px;
 `;
 
+const FormWrap = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
 const CheckOut = () => {
+  const { register, handleSubmit, errors } = useForm();
+  const onSubmit = values => console.log(values);
   return (
     <>
       <ShopCheckHeader title="checkout" />
       <DivWrapAll>
         <DivWrap width="60%">
-          <div>
+          <FormWrap onSubmit={handleSubmit(onSubmit)}>
+            <label>
+              FIRST NAME *
+              <input
+                type="text"
+                name="firstName"
+                ref={register({ required: "Required", maxLength: 80 })}
+              />
+            </label>
+            <label>
+              LAST NAME *
+              <input
+                type="text"
+                name="lastName"
+                ref={register({ required: "Required", maxLength: 100 })}
+              />
+            </label>
+            <label>
+              COMPANY NAME
+              <input type="text" name="company" ref={register} />
+            </label>
+            <label>
+              COUNTRY *
+              <select name="country" ref={register({ required: "Required" })}>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Poland">Poland</option>
+                <option value="Germany">Germany</option>
+                <option value="France">France</option>
+                <option value="India">India</option>
+                <option value="Australia">Australia</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Canada">Canada</option>
+              </select>
+            </label>
+            <label>
+              ADDRESS *
+              <input
+                type="text"
+                name="address"
+                ref={register({
+                  required: "Required",
+                  minLength: 5,
+                  maxLength: 15
+                })}
+              />
+            </label>
+            <label>
+              POSTCODE *
+              <input
+                type="text"
+                name="postcode"
+                ref={register({ required: "Required" })}
+              />
+            </label>
+            <label>
+              TOWN/CITY *
+              <input
+                type="text"
+                name="townCity"
+                ref={register({ required: "Required" })}
+              />
+            </label>
+            <label>
+              PROVINCE *
+              <input
+                type="text"
+                name="province"
+                ref={register({ required: "Required" })}
+              />
+            </label>
+            <label>
+              PHONE NO *
+              <input
+                type="text"
+                name="phoneNo"
+                ref={register({ required: "Required" })}
+              />
+            </label>
+            <label>
+              EMAIL ADDRESS *
+              <input
+                type="text"
+                name="email"
+                ref={register({
+                  required: "Required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                    message: "invalid email address"
+                  }
+                })}
+              />
+              {errors.email && errors.email.message}
+            </label>
+            <label>
+              <input type="checkbox" name="terms" ref={register} />
+              TERMS AND CONDITIONS
+            </label>
+            <label>
+              <input type="checkbox" name="createAcount" ref={register} />
+              CREATE AN ACCOUNT
+            </label>
+            <label>
+              <input type="checkbox" name="subscribe" ref={register} />
+              SUBSCRIBE TO OUR NEWSLETTER
+            </label>
+
+            <input type="submit" />
+          </FormWrap>
+          {/* <div>
             <div>
               <h5>Billing Address</h5>
             </div>
@@ -174,7 +289,7 @@ const CheckOut = () => {
                 </div>
               </div>
             </form>
-          </div>
+          </div> */}
         </DivWrap>
 
         <DivWrap width="40%">

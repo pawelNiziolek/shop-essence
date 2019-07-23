@@ -12,7 +12,7 @@ const DivWrap = styled.div`
 
 const DivWrapAdress = styled.div`
   width: 40%;
-  padding: 90px 50px;
+  padding: 90px 70px;
   z-index: 99;
 `;
 
