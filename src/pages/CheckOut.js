@@ -6,18 +6,98 @@ import useForm from "react-hook-form";
 
 const DivWrapAll = styled.div`
   display: flex;
-  margin: 0 50px;
+  margin: 80px;
 `;
 
 const DivWrap = styled.div`
-  width: ${props => props.width};
-  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 0 15px;
+  margin: 50px auto;
+`;
+
+const H1 = styled.h1`
+  line-height: 1.3;
+  font-weight: 700;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-bottom: 8px;
 `;
 
 const FormWrap = styled.form`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
+
+const LabelForm = styled.label`
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 20px;
+`;
+
+const InputForm = styled.input`
+  display: block;
+  height: 42px;
+  border: 1px solid #ebebeb;
+  border-radius: 0;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #495057;
+  margin-top: 8px;
+  transition: 0.15s;
+  :focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    border-color: rgba(0, 123, 255, 0.25);
+    outline: 0;
+  }
+`;
+
+const SelectForm = styled.select`
+  height: 42px;
+  border: 1px solid #ebebeb;
+  background-color: transparent;
+  border-radius: 0;
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: 0.15s;
+`;
+
+const LabelBox = styled.label`
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+`;
+
+const InputBox = styled.input`
+  margin: 10px;
+`;
+
+const SpanErr = styled.span`
+  color: red;
+  padding: 5px 0;
+  font-weight: 200;
+  text-transform: lowercase;
+`;
+
+const InputSub = styled.input``;
 
 const CheckOut = () => {
   const { register, handleSubmit, errors } = useForm();
@@ -26,31 +106,35 @@ const CheckOut = () => {
     <>
       <ShopCheckHeader title="checkout" />
       <DivWrapAll>
-        <DivWrap width="60%">
+        <DivWrap>
+          <H1>billing address</H1>
           <FormWrap onSubmit={handleSubmit(onSubmit)}>
-            <label>
+            <LabelForm>
               FIRST NAME *
-              <input
+              <InputForm
                 type="text"
                 name="firstName"
                 ref={register({ required: "Required", maxLength: 80 })}
               />
-            </label>
-            <label>
+            </LabelForm>
+            <LabelForm>
               LAST NAME *
-              <input
+              <InputForm
                 type="text"
                 name="lastName"
                 ref={register({ required: "Required", maxLength: 100 })}
               />
-            </label>
-            <label>
+            </LabelForm>
+            <LabelForm>
               COMPANY NAME
-              <input type="text" name="company" ref={register} />
-            </label>
-            <label>
+              <InputForm type="text" name="company" ref={register} />
+            </LabelForm>
+            <LabelForm>
               COUNTRY *
-              <select name="country" ref={register({ required: "Required" })}>
+              <SelectForm
+                name="country"
+                ref={register({ required: "Required" })}
+              >
                 <option value="United States">United States</option>
                 <option value="United Kingdom">United Kingdom</option>
                 <option value="Poland">Poland</option>
@@ -60,11 +144,11 @@ const CheckOut = () => {
                 <option value="Australia">Australia</option>
                 <option value="Brazil">Brazil</option>
                 <option value="Canada">Canada</option>
-              </select>
-            </label>
-            <label>
+              </SelectForm>
+            </LabelForm>
+            <LabelForm>
               ADDRESS *
-              <input
+              <InputForm
                 type="text"
                 name="address"
                 ref={register({
@@ -73,226 +157,69 @@ const CheckOut = () => {
                   maxLength: 15
                 })}
               />
-            </label>
-            <label>
+            </LabelForm>
+            <LabelForm>
               POSTCODE *
-              <input
+              <InputForm
                 type="text"
                 name="postcode"
                 ref={register({ required: "Required" })}
               />
-            </label>
-            <label>
+            </LabelForm>
+            <LabelForm>
               TOWN/CITY *
-              <input
+              <InputForm
                 type="text"
                 name="townCity"
                 ref={register({ required: "Required" })}
               />
-            </label>
-            <label>
+            </LabelForm>
+            <LabelForm>
               PROVINCE *
-              <input
+              <InputForm
                 type="text"
                 name="province"
                 ref={register({ required: "Required" })}
               />
-            </label>
-            <label>
+            </LabelForm>
+            <LabelForm>
               PHONE NO *
-              <input
+              <InputForm
                 type="text"
                 name="phoneNo"
                 ref={register({ required: "Required" })}
               />
-            </label>
-            <label>
+            </LabelForm>
+            <LabelForm>
               EMAIL ADDRESS *
-              <input
+              <InputForm
                 type="text"
                 name="email"
                 ref={register({
-                  required: "Required",
+                  required: true,
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
                     message: "invalid email address"
                   }
                 })}
               />
-              {errors.email && errors.email.message}
-            </label>
-            <label>
-              <input type="checkbox" name="terms" ref={register} />
+              <SpanErr>{errors.email && errors.email.message}</SpanErr>
+            </LabelForm>
+            <LabelBox>
+              <InputBox type="checkbox" name="terms" ref={register} />
               TERMS AND CONDITIONS
-            </label>
-            <label>
-              <input type="checkbox" name="createAcount" ref={register} />
+            </LabelBox>
+            <LabelBox>
+              <InputBox type="checkbox" name="createAcount" ref={register} />
               CREATE AN ACCOUNT
-            </label>
-            <label>
-              <input type="checkbox" name="subscribe" ref={register} />
+            </LabelBox>
+            <LabelBox>
+              <InputBox type="checkbox" name="subscribe" ref={register} />
               SUBSCRIBE TO OUR NEWSLETTER
-            </label>
-
-            <input type="submit" />
+            </LabelBox>
           </FormWrap>
-          {/* <div>
-            <div>
-              <h5>Billing Address</h5>
-            </div>
-
-            <form action="#" method="post">
-              <div>
-                <div>
-                  <label htmlFor="first_name">
-                    First Name <span>*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="first_name"
-                    onChange={() => {}}
-                    value=""
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="last_name">
-                    Last Name <span>*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="last_name"
-                    onChange={() => {}}
-                    value=""
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="company">Company Name</label>
-                  <input
-                    type="text"
-                    id="company"
-                    onChange={() => {}}
-                    value=""
-                  />
-                </div>
-                <div>
-                  <label htmlFor="country">
-                    Country <span>*</span>
-                  </label>
-                  <select id="country">
-                    <option onChange={() => {}} value="usa">
-                      United States
-                    </option>
-                    <option onChange={() => {}} value="uk">
-                      United Kingdom
-                    </option>
-                    <option onChange={() => {}} value="ger">
-                      Germany
-                    </option>
-                    <option onChange={() => {}} value="fra">
-                      France
-                    </option>
-                    <option onChange={() => {}} value="ind">
-                      India
-                    </option>
-                    <option onChange={() => {}} value="aus">
-                      Australia
-                    </option>
-                    <option onChange={() => {}} value="bra">
-                      Brazil
-                    </option>
-                    <option onChange={() => {}} value="cana">
-                      Canada
-                    </option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="street_address">
-                    Address <span>*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="street_address"
-                    onChange={() => {}}
-                    value=""
-                  />
-                  <input
-                    type="text"
-                    id="street_address2"
-                    onChange={() => {}}
-                    value=""
-                  />
-                </div>
-                <div>
-                  <label htmlFor="postcode">
-                    Postcode <span>*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="postcode"
-                    onChange={() => {}}
-                    value=""
-                  />
-                </div>
-                <div>
-                  <label htmlFor="city">
-                    Town/City <span>*</span>
-                  </label>
-                  <input type="text" id="city" onChange={() => {}} value="" />
-                </div>
-                <div>
-                  <label htmlFor="state">
-                    Province <span>*</span>
-                  </label>
-                  <input type="text" id="state" onChange={() => {}} value="" />
-                </div>
-                <div>
-                  <label htmlFor="phone_number">
-                    Phone No <span>*</span>
-                  </label>
-                  <input
-                    type="number"
-                    id="phone_number"
-                    min="0"
-                    onChange={() => {}}
-                    value=""
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email_address">
-                    Email Address <span>*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email_address"
-                    onChange={() => {}}
-                    value=""
-                  />
-                </div>
-
-                <div>
-                  <div>
-                    <input type="checkbox" id="customCheck1" />
-                    <label htmlFor="customCheck1">Terms and conitions</label>
-                  </div>
-                  <div>
-                    <input type="checkbox" id="customCheck2" />
-                    <label htmlFor="customCheck2">Create an accout</label>
-                  </div>
-                  <div>
-                    <input type="checkbox" id="customCheck3" />
-                    <label htmlFor="customCheck3">
-                      Subscribe to our newsletter
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div> */}
         </DivWrap>
-
-        <DivWrap width="40%">
+        <DivWrap>
           <div>
             <div>
               <h5>Your Order</h5>
@@ -336,7 +263,7 @@ const CheckOut = () => {
                 <div
                   id="collapseOne"
                   role="tabpanel"
-                  aria-labelledby="headingOne"
+                  // aria-LabelFormledby="headingOne"
                   data-parent="#accordion"
                 >
                   <div>
@@ -367,7 +294,7 @@ const CheckOut = () => {
               <div
                 id="collapseTwo"
                 role="tabpanel"
-                aria-labelledby="headingTwo"
+                // aria-LabelFormledby="headingTwo"
                 data-parent="#accordion"
               >
                 <div>
@@ -396,7 +323,7 @@ const CheckOut = () => {
               <div
                 id="collapseThree"
                 role="tabpanel"
-                aria-labelledby="headingThree"
+                // aria-LabelFormledby="headingThree"
                 data-parent="#accordion"
               >
                 <div className="card-body">
@@ -425,7 +352,7 @@ const CheckOut = () => {
               <div
                 id="collapseFour"
                 role="tabpanel"
-                aria-labelledby="headingThree"
+                // aria-LabelFormledby="headingThree"
                 data-parent="#accordion"
               >
                 <div>
