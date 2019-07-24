@@ -6,7 +6,7 @@ import useForm from "react-hook-form";
 
 const DivWrapAll = styled.div`
   display: flex;
-  margin: 80px;
+  margin: 80px 100px;
 `;
 
 const DivWrap = styled.div`
@@ -14,7 +14,7 @@ const DivWrap = styled.div`
   flex-direction: column;
   width: 50%;
   padding: 0 15px;
-  margin: 50px auto;
+  margin: 50px 0;
 `;
 
 const H1 = styled.h1`
@@ -23,7 +23,7 @@ const H1 = styled.h1`
   font-family: "Ubuntu", sans-serif;
   font-size: 20px;
   text-transform: capitalize;
-  margin-bottom: 8px;
+  margin-bottom: 30px;
 `;
 
 const FormWrap = styled.form`
@@ -84,6 +84,7 @@ const LabelBox = styled.label`
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 600;
+  color: #212529;
 `;
 
 const InputBox = styled.input`
@@ -97,7 +98,52 @@ const SpanErr = styled.span`
   text-transform: lowercase;
 `;
 
-const InputSub = styled.input``;
+// --------
+const DivWrapOrder = styled(DivWrap)`
+  padding: 0 15px 0 110px;
+  margin: 0;
+`;
+
+const ArticleWrap = styled.article`
+  padding: 40px;
+  width: 100%;
+  border: 2px solid #ebebeb;
+`;
+
+const DivTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const PTitle = styled.p`
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 700;
+  font-family: "Ubuntu", sans-serif;
+  margin-bottom: 8px;
+`;
+
+const PDetails = styled.p`
+  color: #787878;
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 400;
+  margin-bottom: 16px;
+`;
+
+const LiDetails = styled.li`
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 20px 0;
+  border-bottom: 2px solid #ebebeb;
+  font-weight: 600;
+  color: #212529;
+`;
 
 const CheckOut = () => {
   const { register, handleSubmit, errors } = useForm();
@@ -219,29 +265,28 @@ const CheckOut = () => {
             </LabelBox>
           </FormWrap>
         </DivWrap>
-        <DivWrap>
-          <div>
-            <div>
-              <h5>Your Order</h5>
-              <p>The Details</p>
-            </div>
-
+        <DivWrapOrder>
+          <ArticleWrap>
+            <DivTitle>
+              <PTitle>Your Order</PTitle>
+              <PDetails>The Details</PDetails>
+            </DivTitle>
             <ul>
-              <li>
+              <LiDetails>
                 <span>Product</span> <span>Total</span>
-              </li>
-              <li>
+              </LiDetails>
+              <LiDetails>
                 <span>Cocktail Yellow dress</span> <span>$59.90</span>
-              </li>
-              <li>
+              </LiDetails>
+              <LiDetails>
                 <span>Subtotal</span> <span>$59.90</span>
-              </li>
-              <li>
+              </LiDetails>
+              <LiDetails>
                 <span>Shipping</span> <span>Free</span>
-              </li>
-              <li>
+              </LiDetails>
+              <LiDetails>
                 <span>Total</span> <span>$59.90</span>
-              </li>
+              </LiDetails>
             </ul>
 
             <div id="accordion" role="tablist">
@@ -364,8 +409,8 @@ const CheckOut = () => {
               </div>
             </div>
             <Link to="#">Place Order</Link>
-          </div>
-        </DivWrap>
+          </ArticleWrap>
+        </DivWrapOrder>
       </DivWrapAll>
     </>
   );
