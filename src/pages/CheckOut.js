@@ -1,16 +1,8 @@
 import React from "react";
 import ShopCheckHeader from "../components/ShopCheckHeader";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import useForm from "react-hook-form";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionItemHeading,
-  AccordionItemPanel,
-  AccordionItemButton
-} from "react-accessible-accordion";
-import "../otherStyle/accordionstyle.css";
+import CheckoutArticleOrder from "../components/CheckoutArticleOrder";
 
 const DivWrapAll = styled.div`
   display: flex;
@@ -36,7 +28,6 @@ const H1 = styled.h1`
 
 const FormWrap = styled.form`
   display: flex;
-  flex-direction: column;
   width: 100%;
 `;
 
@@ -112,156 +103,16 @@ const DivWrapOrder = styled(DivWrap)`
   margin: 0;
 `;
 
-const ArticleWrap = styled.article`
-  padding: 40px;
-  width: 100%;
-  border: 2px solid #ebebeb;
-`;
-
-const DivTitle = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const PTitle = styled.p`
-  font-size: 20px;
-  line-height: 1.3;
-  font-weight: 700;
-  font-family: "Ubuntu", sans-serif;
-  margin-bottom: 8px;
-`;
-
-const PDetails = styled.p`
-  color: #787878;
-  font-size: 14px;
-  line-height: 2;
-  font-weight: 400;
-  margin-bottom: 16px;
-`;
-
-const UlDetails = styled.ul`
-  margin-bottom: 24px;
-`;
-
-const LiDetails = styled.li`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0;
-  font-size: 12px;
-  text-transform: uppercase;
-  padding: 20px 0;
-  border-bottom: 2px solid #ebebeb;
-  font-weight: 600;
-  color: #212529;
-`;
-
-const payments = [
-  {
-    id: 1,
-    title: "Paypal",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus."
-  },
-  {
-    id: 2,
-    title: "cash on delivery",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus."
-  },
-  {
-    id: 3,
-    title: "credit card",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus."
-  },
-  {
-    id: 4,
-    title: "direct bank transfer",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus."
-  }
-];
-
-const Iicon = styled.i`
-  margin-right: 20px;
-`;
-
-const SpanTitle = styled.span`
-  display: block;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 600;
-  padding: 12px 20px;
-  cursor: pointer;
-`;
-
-const DivHide = styled.div`
-  padding: 20px;
-  margin-bottom: 16px;
-  overflow: hidden;
-`;
-
-const Ptext = styled.p`
-  font-size: 12px;
-  line-height: 2;
-  color: #9f9f9f;
-`;
-
-const ButtonOrder = styled.button`
-  min-width: 170px;
-  height: 50px;
-  color: #ffffff;
-  border: none;
-  border-radius: 0;
-  padding: 0 40px;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-family: "Poppins", sans-serif;
-  line-height: 50px;
-  background-color: #0315ff;
-  letter-spacing: 1.5px;
-  font-weight: 600;
-  outline: none;
-  cursor: pointer;
-  transition: 0.15s ease-in-out;
-  :hover {
-    background-color: #dc0345;
-  }
-  :focus {
-    background-color: #dc0345;
-    box-shadow: 0 0 2px 2px #999;
-  }
-`;
-
 const CheckOut = () => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = values => console.log(values);
-
-  const paymentsChoice = payments.map(el => (
-    <AccordionItem>
-      <AccordionItemHeading>
-        <AccordionItemButton style={{ outline: "none" }}>
-          <SpanTitle>
-            <Iicon className="fa fa-circle-o mr-3" />
-            {el.title}
-          </SpanTitle>
-        </AccordionItemButton>
-      </AccordionItemHeading>
-      <AccordionItemPanel>
-        <DivHide>
-          <Ptext>{el.text}</Ptext>
-        </DivHide>
-      </AccordionItemPanel>
-    </AccordionItem>
-  ));
   return (
     <>
       <ShopCheckHeader title="checkout" />
       <DivWrapAll>
-        <DivWrap>
-          <H1>billing address</H1>
-          <FormWrap onSubmit={handleSubmit(onSubmit)}>
+        <FormWrap onSubmit={handleSubmit(onSubmit)}>
+          <DivWrap>
+            <H1>billing address</H1>
             <LabelForm>
               FIRST NAME *
               <InputForm
@@ -370,40 +221,11 @@ const CheckOut = () => {
               <InputBox type="checkbox" name="subscribe" ref={register} />
               SUBSCRIBE TO OUR NEWSLETTER
             </LabelBox>
-          </FormWrap>
-        </DivWrap>
-        <DivWrapOrder>
-          <ArticleWrap>
-            <DivTitle>
-              <PTitle>Your Order</PTitle>
-              <PDetails>The Details</PDetails>
-            </DivTitle>
-            <UlDetails>
-              <LiDetails>
-                <span>Product</span> <span>Total</span>
-              </LiDetails>
-              <LiDetails>
-                <span>Cocktail Yellow dress</span> <span>$59.90</span>
-              </LiDetails>
-              <LiDetails>
-                <span>Subtotal</span> <span>$59.90</span>
-              </LiDetails>
-              <LiDetails>
-                <span>Shipping</span> <span>Free</span>
-              </LiDetails>
-              <LiDetails>
-                <span>Total</span> <span>$59.90</span>
-              </LiDetails>
-            </UlDetails>
-            <Accordion
-              allowZeroExpanded={true}
-              style={{ marginBottom: "24px" }}
-            >
-              {paymentsChoice}
-            </Accordion>
-            <ButtonOrder>Place Order</ButtonOrder>
-          </ArticleWrap>
-        </DivWrapOrder>
+          </DivWrap>
+          <DivWrapOrder>
+            <CheckoutArticleOrder />
+          </DivWrapOrder>
+        </FormWrap>
       </DivWrapAll>
     </>
   );
