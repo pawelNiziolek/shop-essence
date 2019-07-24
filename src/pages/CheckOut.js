@@ -208,6 +208,32 @@ const Ptext = styled.p`
   color: #9f9f9f;
 `;
 
+const ButtonOrder = styled.button`
+  min-width: 170px;
+  height: 50px;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  padding: 0 40px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  line-height: 50px;
+  background-color: #0315ff;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  transition: 0.15s ease-in-out;
+  :hover {
+    background-color: #dc0345;
+  }
+  :focus {
+    background-color: #dc0345;
+    box-shadow: 0 0 2px 2px #999;
+  }
+`;
+
 const CheckOut = () => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = values => console.log(values);
@@ -369,8 +395,13 @@ const CheckOut = () => {
                 <span>Total</span> <span>$59.90</span>
               </LiDetails>
             </UlDetails>
-            <Accordion allowZeroExpanded={true}>{paymentsChoice}</Accordion>
-            <Link to="#">Place Order</Link>
+            <Accordion
+              allowZeroExpanded={true}
+              style={{ marginBottom: "24px" }}
+            >
+              {paymentsChoice}
+            </Accordion>
+            <ButtonOrder>Place Order</ButtonOrder>
           </ArticleWrap>
         </DivWrapOrder>
       </DivWrapAll>
