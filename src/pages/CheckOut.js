@@ -3,6 +3,14 @@ import ShopCheckHeader from "../components/ShopCheckHeader";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import useForm from "react-hook-form";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemPanel,
+  AccordionItemButton
+} from "react-accessible-accordion";
+import "../otherStyle/accordionstyle.css";
 
 const DivWrapAll = styled.div`
   display: flex;
@@ -131,8 +139,11 @@ const PDetails = styled.p`
   margin-bottom: 16px;
 `;
 
+const UlDetails = styled.ul`
+  margin-bottom: 24px;
+`;
+
 const LiDetails = styled.li`
-  display: -ms-flexbox;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -145,9 +156,79 @@ const LiDetails = styled.li`
   color: #212529;
 `;
 
+const payments = [
+  {
+    id: 1,
+    title: "Paypal",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus."
+  },
+  {
+    id: 2,
+    title: "cash on delivery",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus."
+  },
+  {
+    id: 3,
+    title: "credit card",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus."
+  },
+  {
+    id: 4,
+    title: "direct bank transfer",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus."
+  }
+];
+
+const Iicon = styled.i`
+  margin-right: 20px;
+`;
+
+const SpanTitle = styled.span`
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 12px 20px;
+  cursor: pointer;
+`;
+
+const DivHide = styled.div`
+  padding: 20px;
+  margin-bottom: 16px;
+  overflow: hidden;
+`;
+
+const Ptext = styled.p`
+  font-size: 12px;
+  line-height: 2;
+  color: #9f9f9f;
+`;
+
 const CheckOut = () => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = values => console.log(values);
+
+  const paymentsChoice = payments.map(el => (
+    <AccordionItem>
+      <AccordionItemHeading>
+        <AccordionItemButton style={{ outline: "none" }}>
+          <SpanTitle>
+            <Iicon className="fa fa-circle-o mr-3" />
+            {el.title}
+          </SpanTitle>
+        </AccordionItemButton>
+      </AccordionItemHeading>
+      <AccordionItemPanel>
+        <DivHide>
+          <Ptext>{el.text}</Ptext>
+        </DivHide>
+      </AccordionItemPanel>
+    </AccordionItem>
+  ));
   return (
     <>
       <ShopCheckHeader title="checkout" />
@@ -271,7 +352,7 @@ const CheckOut = () => {
               <PTitle>Your Order</PTitle>
               <PDetails>The Details</PDetails>
             </DivTitle>
-            <ul>
+            <UlDetails>
               <LiDetails>
                 <span>Product</span> <span>Total</span>
               </LiDetails>
@@ -287,127 +368,8 @@ const CheckOut = () => {
               <LiDetails>
                 <span>Total</span> <span>$59.90</span>
               </LiDetails>
-            </ul>
-
-            <div id="accordion" role="tablist">
-              <div>
-                <div role="tab" id="headingOne">
-                  <h6>
-                    <a
-                      data-toggle="collapse"
-                      href="#collapseOne"
-                      aria-expanded="false"
-                      aria-controls="collapseOne"
-                    >
-                      <i className="fa fa-circle-o mr-3" />
-                      Paypal
-                    </a>
-                  </h6>
-                </div>
-
-                <div
-                  id="collapseOne"
-                  role="tabpanel"
-                  // aria-LabelFormledby="headingOne"
-                  data-parent="#accordion"
-                >
-                  <div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Proin pharetra tempor so dales. Phasellus sagittis auctor
-                      gravida. Integ er bibendum sodales arcu id te mpus. Ut
-                      consectetur lacus.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div role="tab" id="headingTwo">
-                <h6>
-                  <a
-                    data-toggle="collapse"
-                    href="#collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="collapseTwo"
-                  >
-                    <i className="fa fa-circle-o mr-3" />
-                    cash on delievery
-                  </a>
-                </h6>
-              </div>
-              <div
-                id="collapseTwo"
-                role="tabpanel"
-                // aria-LabelFormledby="headingTwo"
-                data-parent="#accordion"
-              >
-                <div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Explicabo quis in veritatis officia inventore, tempore
-                    provident dignissimos.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div role="tab" id="headingThree">
-                <h6 className="mb-0">
-                  <a
-                    data-toggle="collapse"
-                    href="#collapseThree"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >
-                    <i className="fa fa-circle-o mr-3" />
-                    credit card
-                  </a>
-                </h6>
-              </div>
-              <div
-                id="collapseThree"
-                role="tabpanel"
-                // aria-LabelFormledby="headingThree"
-                data-parent="#accordion"
-              >
-                <div className="card-body">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Esse quo sint repudiandae suscipit ab soluta delectus
-                    voluptate, vero vitae
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div role="tab" id="headingFour">
-                <h6 className="mb-0">
-                  <a
-                    data-toggle="collapse"
-                    href="#collapseFour"
-                    aria-expanded="true"
-                    aria-controls="collapseFour"
-                  >
-                    <i className="fa fa-circle-o mr-3" />
-                    direct bank transfer
-                  </a>
-                </h6>
-              </div>
-              <div
-                id="collapseFour"
-                role="tabpanel"
-                // aria-LabelFormledby="headingThree"
-                data-parent="#accordion"
-              >
-                <div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Est cum autem eveniet saepe fugit, impedit magni.
-                  </p>
-                </div>
-              </div>
-            </div>
+            </UlDetails>
+            <Accordion allowZeroExpanded={true}>{paymentsChoice}</Accordion>
             <Link to="#">Place Order</Link>
           </ArticleWrap>
         </DivWrapOrder>
