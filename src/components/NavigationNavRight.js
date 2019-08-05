@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import heart from "../img/core-img/heart.svg";
@@ -29,7 +29,8 @@ const SpanCart = styled.span`
   top: -10px;
 `;
 
-const NavigationNavRight = () => {
+const NavigationNavRight = props => {
+  const [show, setShow] = useState(props.cart);
   return (
     <>
       <NavigationSearchButton />
@@ -44,7 +45,13 @@ const NavigationNavRight = () => {
         </Link>
       </DivLink>
       <DivLink>
-        <Link to="#" id="essenceCartBtn">
+        <Link
+          to="#"
+          id="essenceCartBtn"
+          cart={props.cart}
+          onClick={() => setShow(!show)}
+          showDiv={show}
+        >
           <ImgMenu src={bag} alt="bag icon" />
           <SpanCart>3</SpanCart>
         </Link>
