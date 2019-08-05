@@ -6,6 +6,7 @@ import Page from "./Page";
 import BtnUp from "../layouts/BtnUp";
 import { HashRouter } from "react-router-dom";
 import ScrollToTop from "react-router-scroll-top";
+import Cart from "../layouts/Cart";
 
 const WrapAllDiv = styled.div`
   display: flex;
@@ -46,12 +47,18 @@ class App extends React.Component {
       <HashRouter getUserConfirmation={this.getConfirmation}>
         <ScrollToTop>
           <WrapAllDiv>
-            <HeaderMenu> {<Navigation />}</HeaderMenu>
+            <HeaderMenu>
+              <Navigation />
+            </HeaderMenu>
             <Main>
-              {<Page />}
+              <Page />
               <BtnUp />
+              <Cart />
             </Main>
-            <FooterArea>{<Footer />}</FooterArea>
+
+            <FooterArea>
+              <Footer />
+            </FooterArea>
           </WrapAllDiv>
         </ScrollToTop>
       </HashRouter>
