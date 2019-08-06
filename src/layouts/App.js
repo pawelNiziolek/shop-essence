@@ -48,14 +48,13 @@ class App extends React.Component {
         <ScrollToTop>
           <WrapAllDiv>
             <HeaderMenu>
-              <Navigation cart={false} />
+              <Navigation />
             </HeaderMenu>
             <Main>
               <Page />
               <BtnUp />
-              <Cart cart={false} />
+              <Cart />
             </Main>
-
             <FooterArea>
               <Footer />
             </FooterArea>
