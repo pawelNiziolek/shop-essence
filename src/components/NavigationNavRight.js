@@ -26,7 +26,7 @@ const SpanCart = styled.span`
   color: #0315ff;
   font-weight: 700;
   position: absolute;
-  top: -10px;
+  top: -20px;
 `;
 
 const NavigationNavRight = () => {

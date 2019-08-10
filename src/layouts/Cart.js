@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import bag from "../img/core-img/bag.svg";
 
-const WrapAll = styled.div`
+const DivHidden = styled.div`
   position: fixed;
   /* display: ${props => (props.showDiv ? "block" : "none")}; */
   /* display: none; */
@@ -19,7 +19,6 @@ const WrapAll = styled.div`
 
 const DivLink = styled.div`
   position: relative;
-  margin: 0;
   left: -90px;
   display: flex;
   justify-content: center;
@@ -28,7 +27,7 @@ const DivLink = styled.div`
   border-left: 1px solid #ebebeb;
   height: 85px;
   line-height: 90px;
-  background-color: #eeeeee;
+  background-color: #fff;
 `;
 
 const ImgMenu = styled.img`
@@ -42,70 +41,143 @@ const SpanCart = styled.span`
   color: #0315ff;
   font-weight: 700;
   position: absolute;
-  top: -10px;
+  top: -20px;
 `;
 
-const DivWrap = styled.div`
-  position: absolute;
+const DivWrapAll = styled.div`
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 1100;
+  width: 670px;
+  height: 100%;
+  background-color: #fff;
+`;
+
+const DivWrap = styled.div`
+  display: flex;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+`;
+
+const DivSummary = styled.div`
+  padding: 100px 10%;
+  width: 100%;
+`;
+const H1Sum = styled.h1`
+  font-size: 30px;
+  margin-bottom: 100px;
+  line-height: 1.3;
+  font-weight: 700;
+  font-family: "Ubuntu", sans-serif;
+`;
+
+const LiSum = styled.li`
+  margin-bottom: 20px;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const SpanSecond = styled.span`
+  font-weight: 700;
+  font-family: "Ubuntu", sans-serif;
+`;
+
+const DivCheckOut = styled.div`
+  margin-top: 100px !important;
+`;
+
+const LinkCheckOut = styled(Link)`
+  display: inline-block;
+  min-width: 170px;
+  height: 50px;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  padding: 0 40px;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 50px;
+  background-color: #0315ff;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  :hover {
+    background-color: #dc0345;
+  }
+`;
+
+const DivListOrder = styled.div`
+  position: relative;
+  z-index: 10;
+  flex: 0 0 190px;
+  width: 190px;
 `;
 
 const Cart = () => {
   return (
-    <WrapAll showDiv={true}>
-      <DivWrap>
+    <>
+      <DivHidden showDiv={true} />
+      <DivWrapAll>
         <DivLink>
-          <Link to="#" id="essenceCartBtn">
+          <Link to="#">
             <ImgMenu src={bag} alt="bag icon" />
             <SpanCart>3</SpanCart>
           </Link>
         </DivLink>
-        <div>
+        <DivWrap>
           <div>
-            <Link to="#">
-              <img
-                src="img/product-img/product-1.jpg"
-                className="cart-thumb"
-                alt=""
-              />
-              <div>
-                <span>
-                  <i className="fa fa-close" aria-hidden="true" />
-                </span>
-                <span>Mango</span>
-                <h6>Button Through Strap Mini Dress</h6>
-                <p>Size: S</p>
-                <p>Color: Red</p>
-                <p>$45.00</p>
-              </div>
-            </Link>
+            <DivListOrder>
+              <Link to="#">
+                <img
+                  src="img/product-img/product-1.jpg"
+                  className="cart-thumb"
+                  alt=""
+                />
+                <div>
+                  <span>
+                    <i className="fa fa-close" aria-hidden="true" />
+                  </span>
+                  <span>Mango</span>
+                  <h6>Button Through Strap Mini Dress</h6>
+                  <p>Size: S</p>
+                  <p>Color: Red</p>
+                  <p>$45.00</p>
+                </div>
+              </Link>
+            </DivListOrder>
           </div>
-        </div>
 
-        <div>
-          <h2>Summary</h2>
-          <ul>
-            <li>
-              <span>subtotal:</span> <span>$274.00</span>
-            </li>
-            <li>
-              <span>delivery:</span> <span>Free</span>
-            </li>
-            <li>
-              <span>discount:</span> <span>-15%</span>
-            </li>
-            <li>
-              <span>total:</span> <span>$232.00</span>
-            </li>
-          </ul>
-          <div>
-            <Link to="checkout">check out</Link>
-          </div>
-        </div>
-      </DivWrap>
-    </WrapAll>
+          <DivSummary>
+            <H1Sum>Summary</H1Sum>
+            <ul>
+              <LiSum>
+                <span>subtotal:</span> <SpanSecond>$274.00</SpanSecond>
+              </LiSum>
+              <LiSum>
+                <span>delivery:</span> <SpanSecond>Free</SpanSecond>
+              </LiSum>
+              <LiSum>
+                <span>discount:</span> <SpanSecond>-15%</SpanSecond>
+              </LiSum>
+              <LiSum>
+                <span>total:</span> <SpanSecond>$232.00</SpanSecond>
+              </LiSum>
+            </ul>
+            <DivCheckOut>
+              <LinkCheckOut to="checkout">check out</LinkCheckOut>
+            </DivCheckOut>
+          </DivSummary>
+        </DivWrap>
+      </DivWrapAll>
+    </>
   );
 };
 
