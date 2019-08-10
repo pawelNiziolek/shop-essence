@@ -16,7 +16,7 @@ const orders = [
     price: "$45.00"
   },
   {
-    id: 0,
+    id: 1,
     img: imgProduct2,
     shop: "Bershka",
     title: "Button Through Strap Mini Dress",
@@ -25,7 +25,7 @@ const orders = [
     price: "$65.00"
   },
   {
-    id: 0,
+    id: 2,
     img: imgProduct3,
     shop: "Zara",
     title: "Button Through Strap Mini Dress",

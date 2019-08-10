@@ -48,11 +48,12 @@ const SpanCart = styled.span`
 const DivWrapAll = styled.div`
   position: fixed;
   top: 0;
-  right: 0;
+  right: ${props => (props.showDiv ? "0" : "-100%")};
   z-index: 1100;
   width: 60%;
   height: 100%;
   background-color: #fff;
+  transition: 0.6s ease-in-out;
 `;
 
 const DivWrap = styled.div`
@@ -71,11 +72,13 @@ const DivWrapOrder = styled.div`
 `;
 
 const Cart = () => {
+  const [show, setShow] = React.useState(true);
+
   return (
     <>
-      <DivHidden showDiv={true} />
-      <DivWrapAll>
-        <DivLink>
+      <DivHidden showDiv={show} onClick={() => setShow(!show)} />
+      <DivWrapAll showDiv={show}>
+        <DivLink showDiv={show} onClick={() => setShow(!show)}>
           <Link to="#">
             <ImgMenu src={bag} alt="bag icon" />
             <SpanCart>3</SpanCart>
