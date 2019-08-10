@@ -76,7 +76,6 @@ const H1Sum = styled.h1`
 
 const LiSum = styled.li`
   margin-bottom: 20px;
-  color: #000000;
   font-size: 14px;
   letter-spacing: 0.75px;
   text-transform: uppercase;
@@ -117,11 +116,12 @@ const LinkCheckOut = styled(Link)`
 
 const DivListOrder = styled.div`
   position: relative;
-  z-index: 10;
   width: 190px;
+  overflow: hidden;
 `;
 
 const ImgBackground = styled.img`
+  display: block;
   width: 100%;
   height: 100%;
 `;
@@ -132,8 +132,9 @@ const DivProdDesc = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  padding: 50px 15px 15px;
   background-color: rgba(0, 0, 0, 0.6);
-  transition: 0.3s;
+  transition: 0.4s;
   :hover {
     background-color: rgba(0, 0, 0, 0.8);
   }
@@ -141,8 +142,56 @@ const DivProdDesc = styled.div`
 
 const DivWrapOrder = styled.div`
   position: relative;
-  z-index: 1110;
   /* overflow-y: scroll; */
+`;
+
+const SpanShop = styled.span`
+  display: block;
+  font-weight: 600;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  text-align: left;
+  padding: 0;
+`;
+
+const PDesc = styled.p`
+  font-size: 12px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  line-height: 1.3;
+  font-weight: 700;
+  font-family: "Ubuntu", sans-serif;
+`;
+
+const PSizeColor = styled.p`
+  display: block;
+  font-weight: 600;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  line-height: 1;
+`;
+
+const PPrice = styled.p`
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-top: 30px;
+  color: #ffffff;
+`;
+
+const SpanClose = styled.span`
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 5px;
 `;
 
 const Cart = () => {
@@ -162,14 +211,14 @@ const Cart = () => {
               <Link to="#">
                 <ImgBackground src={imgProduct1} alt="" />
                 <DivProdDesc>
-                  <span>
+                  <SpanClose>
                     <i className="fa fa-close" aria-hidden="true" />
-                  </span>
-                  <span>Mango</span>
-                  <h6>Button Through Strap Mini Dress</h6>
-                  <p>Size: S</p>
-                  <p>Color: Red</p>
-                  <p>$45.00</p>
+                  </SpanClose>
+                  <SpanShop>Mango</SpanShop>
+                  <PDesc>Button Through Strap Mini Dress</PDesc>
+                  <PSizeColor>Size: S</PSizeColor>
+                  <PSizeColor>Color: Red</PSizeColor>
+                  <PPrice>$45.00</PPrice>
                 </DivProdDesc>
               </Link>
             </DivListOrder>
@@ -177,14 +226,14 @@ const Cart = () => {
               <Link to="#">
                 <ImgBackground src={imgProduct1} alt="" />
                 <DivProdDesc>
-                  <span>
+                  <SpanClose>
                     <i className="fa fa-close" aria-hidden="true" />
-                  </span>
-                  <span>Mango</span>
-                  <h6>Button Through Strap Mini Dress</h6>
-                  <p>Size: S</p>
-                  <p>Color: Red</p>
-                  <p>$45.00</p>
+                  </SpanClose>
+                  <SpanShop>Mango</SpanShop>
+                  <PDesc>Button Through Strap Mini Dress</PDesc>
+                  <PSizeColor>Size: S</PSizeColor>
+                  <PSizeColor>Color: Red</PSizeColor>
+                  <PPrice>$45.00</PPrice>
                 </DivProdDesc>
               </Link>
             </DivListOrder>
@@ -192,14 +241,14 @@ const Cart = () => {
               <Link to="#">
                 <ImgBackground src={imgProduct1} alt="" />
                 <DivProdDesc>
-                  <span>
+                  <SpanClose>
                     <i className="fa fa-close" aria-hidden="true" />
-                  </span>
-                  <span>Mango</span>
-                  <h6>Button Through Strap Mini Dress</h6>
-                  <p>Size: S</p>
-                  <p>Color: Red</p>
-                  <p>$45.00</p>
+                  </SpanClose>
+                  <SpanShop>Mango</SpanShop>
+                  <PDesc>Button Through Strap Mini Dress</PDesc>
+                  <PSizeColor>Size: S</PSizeColor>
+                  <PSizeColor>Color: Red</PSizeColor>
+                  <PPrice>$45.00</PPrice>
                 </DivProdDesc>
               </Link>
             </DivListOrder>
