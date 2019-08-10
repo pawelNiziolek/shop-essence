@@ -7,15 +7,15 @@ import CartSummary from "../components/CartSummary";
 
 const DivHidden = styled.div`
   position: fixed;
-  display: ${props => (props.showDiv ? "block" : "none")};
+  /* display: ${props => (props.showDiv ? "block" : "none")}; */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100vh;
+  width:${props => (props.showDiv ? "100%" : "0")};;
+  height: ${props => (props.showDiv ? "100vh" : "0")};;
   background-color: ${props =>
     props.showDiv ? "rgba(0, 0, 0, 0.4)" : "rgba(0, 0, 0, 0)"};
   z-index: 1050;
-  transition: 0.45s;
+  transition: background-color 0.45s, width 0s, height 0s;
 `;
 
 const DivLink = styled.div`
@@ -48,7 +48,7 @@ const SpanCart = styled.span`
 const DivWrapAll = styled.div`
   position: fixed;
   top: 0;
-  right: ${props => (props.showDiv ? "0" : "-100%")};
+  right: ${props => (props.showDiv ? "0" : "-60%")};
   z-index: 1100;
   width: 60%;
   height: 100%;
@@ -72,7 +72,7 @@ const DivWrapOrder = styled.div`
 `;
 
 const Cart = () => {
-  const [show, setShow] = React.useState(true);
+  const [show, setShow] = React.useState(false);
 
   return (
     <>
