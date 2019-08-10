@@ -16,7 +16,8 @@ const BtnUp = () => {
         lineHeight: "45px",
         marginRight: "30px",
         bottom: "60px",
-        outline: "none"
+        outline: "none",
+        zIndex: "999999"
       }}
     />
   );

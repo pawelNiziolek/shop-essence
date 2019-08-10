@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import bag from "../img/core-img/bag.svg";
-import imgProduct1 from "../img/product-img/product-1.jpg";
+import CartSingleOrder from "../components/CartSingleOrder";
+import CartSummary from "../components/CartSummary";
 
 const DivHidden = styled.div`
   position: fixed;
-  /* display: ${props => (props.showDiv ? "block" : "none")}; */
-  /* display: none; */
+  display: ${props => (props.showDiv ? "block" : "none")};
   top: 0;
   left: 0;
   width: 100%;
@@ -50,7 +50,7 @@ const DivWrapAll = styled.div`
   top: 0;
   right: 0;
   z-index: 1100;
-  width: 670px;
+  width: 60%;
   height: 100%;
   background-color: #fff;
 `;
@@ -62,136 +62,12 @@ const DivWrap = styled.div`
   width: 100%;
 `;
 
-const DivSummary = styled.div`
-  padding: 100px 10%;
-  width: 100%;
-`;
-const H1Sum = styled.h1`
-  font-size: 30px;
-  margin-bottom: 100px;
-  line-height: 1.3;
-  font-weight: 700;
-  font-family: "Ubuntu", sans-serif;
-`;
-
-const LiSum = styled.li`
-  margin-bottom: 20px;
-  font-size: 14px;
-  letter-spacing: 0.75px;
-  text-transform: uppercase;
-  font-weight: 600;
-  display: flex;
-  justify-content: space-between;
-`;
-
-const SpanSecond = styled.span`
-  font-weight: 700;
-  font-family: "Ubuntu", sans-serif;
-`;
-
-const DivCheckOut = styled.div`
-  margin-top: 100px !important;
-`;
-
-const LinkCheckOut = styled(Link)`
-  display: inline-block;
-  min-width: 170px;
-  height: 50px;
-  color: #ffffff;
-  border: none;
-  border-radius: 0;
-  padding: 0 40px;
-  text-transform: uppercase;
-  font-size: 12px;
-  line-height: 50px;
-  background-color: #0315ff;
-  letter-spacing: 1.5px;
-  font-weight: 600;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  :hover {
-    background-color: #dc0345;
-  }
-`;
-
-const DivListOrder = styled.div`
-  position: relative;
-  width: 190px;
-  overflow: hidden;
-`;
-
-const ImgBackground = styled.img`
-  display: block;
-  width: 100%;
-  height: 100%;
-`;
-
-const DivProdDesc = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 50px 15px 15px;
-  background-color: rgba(0, 0, 0, 0.6);
-  transition: 0.4s;
-  :hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-`;
-
 const DivWrapOrder = styled.div`
   position: relative;
+  width: 45%;
+  max-width: 190px;
+  min-width: 110px;
   /* overflow-y: scroll; */
-`;
-
-const SpanShop = styled.span`
-  display: block;
-  font-weight: 600;
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.5);
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  text-align: left;
-  padding: 0;
-`;
-
-const PDesc = styled.p`
-  font-size: 12px;
-  color: #ffffff;
-  text-transform: capitalize;
-  margin-bottom: 30px;
-  line-height: 1.3;
-  font-weight: 700;
-  font-family: "Ubuntu", sans-serif;
-`;
-
-const PSizeColor = styled.p`
-  display: block;
-  font-weight: 600;
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.5);
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  line-height: 1;
-`;
-
-const PPrice = styled.p`
-  font-family: "Ubuntu", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 0;
-  margin-top: 30px;
-  color: #ffffff;
-`;
-
-const SpanClose = styled.span`
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  color: #ffffff;
-  font-size: 12px;
-  padding: 5px;
 `;
 
 const Cart = () => {
@@ -207,73 +83,9 @@ const Cart = () => {
         </DivLink>
         <DivWrap>
           <DivWrapOrder>
-            <DivListOrder>
-              <Link to="#">
-                <ImgBackground src={imgProduct1} alt="" />
-                <DivProdDesc>
-                  <SpanClose>
-                    <i className="fa fa-close" aria-hidden="true" />
-                  </SpanClose>
-                  <SpanShop>Mango</SpanShop>
-                  <PDesc>Button Through Strap Mini Dress</PDesc>
-                  <PSizeColor>Size: S</PSizeColor>
-                  <PSizeColor>Color: Red</PSizeColor>
-                  <PPrice>$45.00</PPrice>
-                </DivProdDesc>
-              </Link>
-            </DivListOrder>
-            <DivListOrder>
-              <Link to="#">
-                <ImgBackground src={imgProduct1} alt="" />
-                <DivProdDesc>
-                  <SpanClose>
-                    <i className="fa fa-close" aria-hidden="true" />
-                  </SpanClose>
-                  <SpanShop>Mango</SpanShop>
-                  <PDesc>Button Through Strap Mini Dress</PDesc>
-                  <PSizeColor>Size: S</PSizeColor>
-                  <PSizeColor>Color: Red</PSizeColor>
-                  <PPrice>$45.00</PPrice>
-                </DivProdDesc>
-              </Link>
-            </DivListOrder>
-            <DivListOrder>
-              <Link to="#">
-                <ImgBackground src={imgProduct1} alt="" />
-                <DivProdDesc>
-                  <SpanClose>
-                    <i className="fa fa-close" aria-hidden="true" />
-                  </SpanClose>
-                  <SpanShop>Mango</SpanShop>
-                  <PDesc>Button Through Strap Mini Dress</PDesc>
-                  <PSizeColor>Size: S</PSizeColor>
-                  <PSizeColor>Color: Red</PSizeColor>
-                  <PPrice>$45.00</PPrice>
-                </DivProdDesc>
-              </Link>
-            </DivListOrder>
+            <CartSingleOrder />
           </DivWrapOrder>
-
-          <DivSummary>
-            <H1Sum>Summary</H1Sum>
-            <ul>
-              <LiSum>
-                <span>subtotal:</span> <SpanSecond>$274.00</SpanSecond>
-              </LiSum>
-              <LiSum>
-                <span>delivery:</span> <SpanSecond>Free</SpanSecond>
-              </LiSum>
-              <LiSum>
-                <span>discount:</span> <SpanSecond>-15%</SpanSecond>
-              </LiSum>
-              <LiSum>
-                <span>total:</span> <SpanSecond>$232.00</SpanSecond>
-              </LiSum>
-            </ul>
-            <DivCheckOut>
-              <LinkCheckOut to="checkout">check out</LinkCheckOut>
-            </DivCheckOut>
-          </DivSummary>
+          <CartSummary />
         </DivWrap>
       </DivWrapAll>
     </>
