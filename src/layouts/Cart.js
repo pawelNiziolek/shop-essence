@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import bag from "../img/core-img/bag.svg";
+import imgProduct1 from "../img/product-img/product-1.jpg";
 
 const DivHidden = styled.div`
   position: fixed;
@@ -117,8 +118,31 @@ const LinkCheckOut = styled(Link)`
 const DivListOrder = styled.div`
   position: relative;
   z-index: 10;
-  flex: 0 0 190px;
   width: 190px;
+`;
+
+const ImgBackground = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+
+const DivProdDesc = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+  :hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+`;
+
+const DivWrapOrder = styled.div`
+  position: relative;
+  z-index: 1110;
+  /* overflow-y: scroll; */
 `;
 
 const Cart = () => {
@@ -133,15 +157,11 @@ const Cart = () => {
           </Link>
         </DivLink>
         <DivWrap>
-          <div>
+          <DivWrapOrder>
             <DivListOrder>
               <Link to="#">
-                <img
-                  src="img/product-img/product-1.jpg"
-                  className="cart-thumb"
-                  alt=""
-                />
-                <div>
+                <ImgBackground src={imgProduct1} alt="" />
+                <DivProdDesc>
                   <span>
                     <i className="fa fa-close" aria-hidden="true" />
                   </span>
@@ -150,10 +170,40 @@ const Cart = () => {
                   <p>Size: S</p>
                   <p>Color: Red</p>
                   <p>$45.00</p>
-                </div>
+                </DivProdDesc>
               </Link>
             </DivListOrder>
-          </div>
+            <DivListOrder>
+              <Link to="#">
+                <ImgBackground src={imgProduct1} alt="" />
+                <DivProdDesc>
+                  <span>
+                    <i className="fa fa-close" aria-hidden="true" />
+                  </span>
+                  <span>Mango</span>
+                  <h6>Button Through Strap Mini Dress</h6>
+                  <p>Size: S</p>
+                  <p>Color: Red</p>
+                  <p>$45.00</p>
+                </DivProdDesc>
+              </Link>
+            </DivListOrder>
+            <DivListOrder>
+              <Link to="#">
+                <ImgBackground src={imgProduct1} alt="" />
+                <DivProdDesc>
+                  <span>
+                    <i className="fa fa-close" aria-hidden="true" />
+                  </span>
+                  <span>Mango</span>
+                  <h6>Button Through Strap Mini Dress</h6>
+                  <p>Size: S</p>
+                  <p>Color: Red</p>
+                  <p>$45.00</p>
+                </DivProdDesc>
+              </Link>
+            </DivListOrder>
+          </DivWrapOrder>
 
           <DivSummary>
             <H1Sum>Summary</H1Sum>
